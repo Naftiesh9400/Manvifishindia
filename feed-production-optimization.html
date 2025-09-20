@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manvi - Fish and Duck Farming India">
+
+    <title>Manvi - Fish and Duck Farming India</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/flaticon-set.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/validnavs.css" rel="stylesheet">
+    <link href="assets/css/helper.css" rel="stylesheet">
+    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link href="assets/css/shop.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+         body {
+             background-color: #F8F9FA;
+             font-family: 'Poppins', sans-serif;
+         }
+         .content-section {
+             padding: 50px;
+             background-color: #fff;
+             border-radius: 20px;
+             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+             margin: 50px auto;
+             max-width: 1200px;
+             width: 95%;
+         }
+         .hero-image-placeholder {
+             width: 100%;
+             height: 400px;
+             background-color: #F0F2F5;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: #B0B0B0;
+             font-size: 1.8rem;
+             font-weight: 500;
+             border-radius: 15px;
+             background-image: url('assets/img/feed.png'); /* Updated Image */
+             background-size: cover;
+             background-position: center;
+         }
+         .content-section h2 {
+             font-weight: 700;
+             margin-bottom: 20px;
+             font-size: 2.8rem;
+             color: #2c3e50;
+         }
+          .content-section p {
+             font-size: 1.1rem;
+             color: #555;
+             line-height: 1.7;
+         }
+         .content-section h4 {
+             font-weight: 600;
+             margin-top: 40px;
+             margin-bottom: 15px;
+             color: #333;
+             font-size: 1.4rem;
+         }
+         .content-section ul {
+             padding-left: 0;
+             list-style-type: none;
+         }
+         .content-section ul li {
+             margin-bottom: 12px;
+             position: relative;
+             padding-left: 30px;
+             font-size: 1rem;
+             color: #444;
+         }
+          .content-section ul li::before {
+             content: "\f00c"; /* Font Awesome check icon */
+             font-family: 'Font Awesome 5 Free';
+             font-weight: 900;
+             color: #A37EF2;
+             position: absolute;
+             left: 0;
+             top: 5px;
+         }
+
+         .chat-fab {
+             position: fixed;
+             bottom: 30px;
+             right: 30px;
+             width: 65px;
+             height: 65px;
+             background-color: #A37EF2;
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             color: white;
+             font-size: 30px;
+             cursor: pointer;
+             box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4);
+             z-index: 10001;
+             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+         }
+         
+         .chat-fab:hover {
+             transform: scale(1.1);
+             box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6);
+         }
+
+         .chat-popup {
+             display: none;
+             position: fixed;
+             bottom: 110px;
+             right: 30px;
+             width: 360px;
+             max-height: 75vh;
+             background-color: #fff;
+             border-radius: 20px;
+             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+             flex-direction: column;
+             overflow: hidden;
+             z-index: 10002;
+             opacity: 0;
+             transform: translateY(20px) scale(0.95);
+             transition: opacity 0.3s ease, transform 0.3s ease;
+         }
+
+         .chat-popup.active {
+             display: flex;
+             opacity: 1;
+             transform: translateY(0) scale(1);
+         }
+
+         .chat-header {
+             background-color: #F3EEFF;
+             color: #333;
+             padding: 20px;
+             text-align: center;
+             border-bottom: 1px solid #EAEAEA;
+             position: relative;
+         }
+         
+         .chat-header h3 {
+             margin: 0;
+             font-size: 1.25rem;
+             font-weight: 600;
+         }
+
+         .chat-header .close-btn {
+             position: absolute;
+             top: 50%;
+             right: 20px;
+             transform: translateY(-50%);
+             font-size: 20px;
+             cursor: pointer;
+             color: #888;
+         }
+         
+          .chat-header .subtitle {
+             font-size: 0.85rem;
+             color: #777;
+             margin-top: 5px;
+         }
+
+         .chat-body {
+             flex-grow: 1;
+             padding: 20px;
+             overflow-y: auto;
+             background-color: #fff;
+         }
+
+         .chat-message {
+             margin-bottom: 15px;
+             display: flex;
+             flex-direction: column;
+         }
+         
+         .chat-message .bubble {
+             padding: 12px 18px;
+             border-radius: 20px;
+             max-width: 85%;
+             word-wrap: break-word;
+             line-height: 1.5;
+         }
+         
+         .chat-message .timestamp {
+             font-size: 0.75rem;
+             color: #aaa;
+             margin-top: 6px;
+         }
+         
+         .bot-message {
+             align-items: flex-start;
+         }
+         .bot-message .bubble {
+             background-color: #F1F1F5;
+             color: #333;
+             border-bottom-left-radius: 5px;
+         }
+         .bot-message .timestamp {
+             align-self: flex-start;
+         }
+
+         .user-message {
+             align-items: flex-end;
+         }
+         .user-message .bubble {
+             background-color: #A37EF2;
+             color: white;
+             border-bottom-right-radius: 5px;
+         }
+         .user-message .timestamp {
+             align-self: flex-end;
+         }
+         
+         .bot-message .quick-reply-btn {
+             background: #fff;
+             border: 1px solid #D1C4E9;
+             color: #A37EF2;
+             padding: 10px 18px;
+             border-radius: 20px;
+             cursor: pointer;
+             margin-top: 10px;
+             font-weight: 500;
+             transition: all 0.2s;
+         }
+         
+         .bot-message .quick-reply-btn:hover {
+             background-color: #A37EF2;
+             color: white;
+             border-color: #A37EF2;
+         }
+         
+         .bot-message .info-form {
+              width: 100%;
+         }
+
+         .bot-message .info-form input {
+             width: 100%;
+             padding: 12px;
+             border: none;
+             border-bottom: 1px solid #ddd;
+             margin-bottom: 12px;
+             font-size: 0.9rem;
+             background: transparent;
+         }
+         
+         .bot-message .info-form input:focus {
+             outline: none;
+             border-bottom-color: #A37EF2;
+         }
+
+         .bot-message .info-form .form-error {
+             color: #E53935;
+             font-size: 0.8rem;
+             margin-top: -8px;
+             margin-bottom: 8px;
+             display: none;
+         }
+         
+         .bot-message .info-form .send-info-btn {
+             background: linear-gradient(45deg, #A37EF2, #C49FFF);
+             color: white;
+             border: none;
+             padding: 12px 20px;
+             border-radius: 25px;
+             cursor: pointer;
+             display: block;
+             margin: 15px auto 0;
+             width: 60%;
+             font-weight: 500;
+             box-shadow: 0 4px 10px rgba(163, 126, 242, 0.3);
+         }
+         
+         .chat-footer {
+             display: flex;
+             padding: 15px;
+             border-top: 1px solid #EAEAEA;
+             background-color: #fff;
+         }
+
+         .chat-footer input {
+             flex-grow: 1;
+             border: 1px solid #EAEAEA;
+             background-color: #F9F9F9;
+             border-radius: 25px;
+             padding: 12px 20px;
+             margin-right: 10px;
+         }
+         
+          .chat-footer input:focus {
+             outline: none;
+             border-color: #A37EF2;
+             background-color: #fff;
+         }
+
+         .chat-footer button {
+             background: linear-gradient(45deg, #A37EF2, #C49FFF);
+             color: white;
+             border: none;
+             border-radius: 50%;
+             width: 48px;
+             height: 48px;
+             font-size: 20px;
+             cursor: pointer;
+             flex-shrink: 0;
+             box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4);
+         }
+    </style>
+</head>
+
+<body>
+     <div id="preloader">
+         <div id="Manvi-preloader" class="Manvi-preloader">
+             <div class="animation-preloader">
+                 <div class="spinner"></div>
+             </div>
+             <div class="loader">
+                 <div class="row">
+                     <div class="col-3 loader-section section-left">
+                         <div class="bg"></div>
+                     </div>
+                     <div class="col-3 loader-section section-left">
+                         <div class="bg"></div>
+                     </div>
+                     <div class="col-3 loader-section section-right">
+                         <div class="bg"></div>
+                     </div>
+                     <div class="col-3 loader-section section-right">
+                         <div class="bg"></div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div class="top-bar-area top-bar-style-one bg-dark text-light">
+         <div class="container">
+             <div class="row align-center">
+                 <div class="col-lg-8">
+                     <ul class="item-flex">
+                         <li>
+                             <i class="fas fa-clock"></i> Opening Hours : Sunday- Friday, 08:00 am - 05:00pm
+                         </li>
+                         <li>
+                             <a href="tel:+91 8538098093"><i class="fas fa-phone-alt"></i> +91 8538098093</a>
+                         </li>
+                     </ul>
+                 </div>
+                 <div class="col-lg-4 text-end">
+                     <div class="social">
+                         <ul>
+                             <li>
+                                 <a href="#">
+                                     <i class="fab fa-facebook-f"></i>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#">
+                                     <i class="fab fa-twitter"></i>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#">
+                                     <i class="fab fa-youtube"></i>
+                                 </a>
+                             </li>
+                             <li>
+                                 <a href="#">
+                                     <i class="fab fa-linkedin-in"></i>
+                                 </a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <header>
+         <nav class="navbar mobile-sidenav inc-shape navbar-sticky navbar-default validnavs dark">
+             <div class="container d-flex justify-content-between align-items-center">
+                 <div class="navbar-brand-left">
+                     <div class="navbar-header">
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                             <i class="fa fa-bars"></i>
+                         </button>
+                         <a class="navbar-brand" href="index.html">
+                             <img src="assets/img/logo-mix.png" class="logo" alt="Logo">
+                         </a>
+                     </div>
+                 </div>
+                 <div class="collapse navbar-collapse" id="navbar-menu">
+                     <img src="assets/img/logo.png" alt="Logo">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                         <i class="fa fa-times"></i>
+                     </button>
+                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                         <li class=""><a href="index.html" class="">Home</a></li>
+                         <li class=""><a href="about-us.html" class="">About Us</a></li>
+                         <li class=""><a href="Board of directors.html" class="">Board Of Director</a></li>
+                         <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                             <ul class="dropdown-menu">
+                                 <li><a href="Fish Farming.html">Fish Farming</a></li>
+                                 <li><a href="batter-palan.html">Batter Palan</a></li>
+                                 <li><a href="duck-poultry-farming.html">Duck & Poultry Farming</a></li>
+                                 <li><a href="egg-production.html">Egg Production</a></li>
+                                 <li><a href="feed-production-optimization.html">Feed Production Optimization</a></li>
+                                 <li><a href="training-advisory.html">Training Advisory</a></li>
+                                 <li><a href="eco-farming-manure.html">Eco Farming Manure</a></li>
+                                 <li><a href="veterinary-health-management.html">Veterinary Health Management</a></li>
+                                 <li><a href="technology-data-platform.html">Technology Data Platform</a></li>
+                             </ul>
+                         </li>
+                         <li class=""><a href="vacancy.html">Vacancy</a></li>
+                         <li class="dropdown">
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
+                             <ul class="dropdown-menu">
+                                 <li class=""><a href="contact.html" class="">Contact Us</a></li>
+                                 <li class=""><a href="#">HR Policy</a></li>
+                             </ul>
+                         </li>
+                     </ul>
+                 </div>
+                 <div class="attr-right">
+                     <div class="attr-nav">
+                         <ul>
+                             <li class="button"><a href="contact.html">Contact Us</a></li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+             <div class="overlay-screen"></div>
+         </nav>
+     </header>
+
+    <div class="container content-section">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="hero-image-placeholder"></div>
+            </div>
+            <div class="col-md-6">
+                <h2>Feed Production & Optimization</h2>
+                <p>Sourcing local ingredients and combining them with AI-based formulations for cost-effective, nutrient-rich feed.</p>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h4>Traditional Inputs:</h4>
+                <ul>
+                    <li>Local pulses, oilcakes, azolla.</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4>Modern + AI Features:</h4>
+                <ul>
+                    <li>AI engine for least-cost formulations.</li>
+                    <li>Lab sensors for quality control.</li>
+                    <li>Batch traceability.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <h4>Benefits:</h4>
+                <ul>
+                    <li>Lower costs, better growth performance.</li>
+                    <li>Stronger circular economy support.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="chat-fab" id="chat-fab">
+         <i class="fas fa-comment-dots"></i>
+     </div>
+
+     <div class="chat-popup" id="chat-popup">
+         <div class="chat-header">
+             <span class="close-btn" id="close-chat">&times;</span>
+             <h3>Contact Us</h3>
+             <p class="subtitle">We'll respond as soon as we can.</p>
+         </div>
+         <div class="chat-body" id="chat-body">
+             <div class="chat-message bot-message" id="initial-bot-message">
+                 <div class="bubble">
+                     Let me know if you have any questions!
+                     <button class="quick-reply-btn" id="quick-reply">I have a question</button>
+                 </div>
+                 <div class="timestamp">Manvi Fish and Duck Farming India Pvt Ltd · 1:30 PM</div>
+             </div>
+         </div>
+         <div class="chat-footer">
+             <input type="text" id="chat-input" placeholder="Type a message...">
+             <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+         </div>
+     </div>
+
+
+     <footer class="bg-dark text-light" style="background-image: url(assets/img/shape/8.png);">
+         <div class="container">
+             <div class="f-items default-padding">
+                 <div class="row">
+                     
+                     <div class="col-lg-4 col-md-6 item">
+                         <div class="footer-item about">
+                             <img class="logo" src="assets/img/logo-icon-light.png" alt="Logo">
+                             <p>
+                                 Manvi Fish and Duck Farming India 
+                             </p>
+                             <form action="#">
+                                 <input type="email" placeholder="Your Email" class="form-control" name="email">
+                                 <button type="submit"> Go</button>  
+                             </form>
+                         </div>
+                     </div>
+                     <div class="col-lg-2 col-md-6 item">
+                         <div class="footer-item link">
+                             <h4 class="widget-title">Explore</h4>
+                             <ul>
+                                 <li>
+                                     <a href="about-us.html">About Us</a>
+                                 </li>
+                                 <li>
+                                     <a href="vacancy.html">Vacancy</a>
+                                 </li>
+                                 <li>
+                                     <a href="Fish Farming.html">Services</a>
+                                 </li>
+                                 <li>
+                                     <a href="contact.html">Contact Us</a>
+                                 </li>
+                                 <li>
+                                     <a href="Board of directors.html">Board Of Directors</a>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 item">
+                         <div class="footer-item contact">
+                             <h4 class="widget-title">Contact Info</h4>
+                             <ul>
+                                 <li>
+                                     <div class="icon">
+                                         <i class="fas fa-home"></i>
+                                     </div>
+                                     <div class="content">
+                                         <strong>Address:</strong>
+                                        Kankari Pancharul Udaynarayanpur Howrah West Bengal-711225, India
+                                     </div>
+                                 </li>
+                                 <li>
+                                     <div class="icon">
+                                         <i class="fas fa-envelope"></i>
+                                     </div>
+                                     <div class="content">
+                                         <strong>Email:</strong>
+                                         <a href="mailto:manvifishindia@gmail.com">manvifishindia@gmail.com</a>
+                                     </div>
+                                 </li>
+                                 <li>
+                                     <div class="icon">
+                                         <i class="fas fa-phone"></i>
+                                     </div>
+                                     <div class="content">
+                                         <strong>Phone:</strong>
+                                         <a href="tel:+91 8538098093">+91 8538098093</a>
+                                     </div>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                     </div>
+             </div>
+             <div class="footer-bottom text-center">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <p>&copy; Copyright 2025. Manvi Fish and Duck Farming India Pvt Ltd - All Rights Reserved <a href="#"></a></p>
+                     </div>
+                 </div>
+             </div>
+             </div>
+         <div class="shape-right-bottom">
+             <img src="assets/img/shape/7.png" alt="Image Not Found">
+         </div>
+     </footer>
+     <script src="assets/js/jquery-3.6.0.min.js"></script>
+     <script src="assets/js/bootstrap.bundle.min.js"></script>
+     <script src="assets/js/jquery.appear.js"></script>
+     <script src="assets/js/swiper-bundle.min.js"></script>
+     <script src="assets/js/progress-bar.min.js"></script>
+     <script src="assets/js/circle-progress.js"></script>
+     <script src="assets/js/isotope.pkgd.min.js"></script>
+     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+     <script src="assets/js/magnific-popup.min.js"></script>
+     <script src="assets/js/count-to.js"></script>
+     <script src="assets/js/jquery.scrolla.min.js"></script>
+     <script src="assets/js/ScrollOnReveal.js"></script>
+     <script src="assets/js/YTPlayer.min.js"></script>
+     <script src="assets/js/validnavs.js"></script>
+     <script src="assets/js/gsap.js"></script>
+     <script src="assets/js/ScrollTrigger.min.js"></script>
+     <script src="assets/js/SplitText.min.js"></script>
+     <script src="assets/js/main.js"></script>
+
+     <script>
+         document.addEventListener('DOMContentLoaded', function() {
+     const chatFab = document.getElementById('chat-fab');
+     const chatPopup = document.getElementById('chat-popup');
+     const closeChat = document.getElementById('close-chat');
+     const chatBody = document.getElementById('chat-body');
+     const chatInput = document.getElementById('chat-input');
+     const sendBtn = document.getElementById('send-btn');
+
+     // --- Main Chat Logic ---
+     chatFab.addEventListener('click', () => chatPopup.classList.toggle('active'));
+     closeChat.addEventListener('click', () => chatPopup.classList.remove('active'));
+
+     const addMessage = (sender, message, isHtml = false) => {
+         const messageDiv = document.createElement('div');
+         const senderClass = sender === 'user' ? 'user-message' : 'bot-message';
+         messageDiv.classList.add('chat-message', senderClass);
+
+         const bubble = document.createElement('div');
+         bubble.classList.add('bubble');
+         bubble.innerHTML = isHtml ? message : message.replace(/\n/g, '<br>');
+
+         const timestamp = document.createElement('div');
+         timestamp.classList.add('timestamp');
+         const time = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
+         timestamp.textContent = sender === 'user' ? `${time} · Sent` : `Manvi Fish... · ${time}`;
+
+         messageDiv.appendChild(bubble);
+         messageDiv.appendChild(timestamp);
+         chatBody.appendChild(messageDiv);
+         chatBody.scrollTop = chatBody.scrollHeight;
+         return bubble; 
+     };
+
+     const handleSend = () => {
+         const message = chatInput.value.trim();
+         if (message) {
+             addMessage('user', message);
+             chatInput.value = '';
+             setTimeout(() => addMessage('bot', "Thanks for your message! We'll get back to you shortly."), 1000);
+         }
+     };
+     
+     sendBtn.addEventListener('click', handleSend);
+     chatInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleSend());
+
+     // --- Dynamic Form Logic ---
+     chatBody.addEventListener('click', function(event) {
+         if (event.target.matches('#quick-reply')) {
+             event.target.closest('.chat-message').remove(); 
+             addMessage('user', 'I have a question');
+             setTimeout(() => {
+                 const formHtml = `
+                     <p>We just need some more information from you to proceed:</p>
+                     <div class="info-form">
+                         <input type="text" name="name" placeholder="Name" required>
+                         <input type="email" name="email" placeholder="Email" required>
+                         <div class="form-error">Please fill in all fields.</div>
+                         <button class="send-info-btn">Send</button>
+                     </div>`;
+                 addMessage('bot', formHtml, true);
+             }, 1000);
+         }
+         
+         if (event.target.matches('.send-info-btn')) {
+             const bubble = event.target.closest('.bubble');
+             const nameInput = bubble.querySelector('input[name="name"]');
+             const emailInput = bubble.querySelector('input[name="email"]');
+             const formError = bubble.querySelector('.form-error');
+             const name = nameInput.value.trim();
+             const email = emailInput.value.trim();
+
+             if (name && email) {
+                 const subject = "New Inquiry from Website";
+                 const body = `Name: ${name}\nEmail: ${email}\n\nMessage:`;
+                 window.location.href = `mailto:naftieshmandl02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                 
+                 addMessage('bot', 'Thank you! Your email client has been opened to send your details.');
+                 bubble.innerHTML = `<p>Thanks for providing your details!</p>`;
+             } else {
+                 formError.style.display = 'block';
+             }
+         }
+     });
+
+     // Close on outside click
+     document.body.addEventListener('click', function(event) {
+          if (!chatPopup.contains(event.target) && !chatFab.contains(event.target) && chatPopup.classList.contains('active')) {
+             chatPopup.classList.remove('active');
+          }
+     });
+});
+     </script>
+</body>
+
+</html>
