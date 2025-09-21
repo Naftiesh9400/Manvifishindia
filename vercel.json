@@ -1,28 +1,28 @@
 {
   "rewrites": [
     {
-      "source": "/vacancy.html",
-      "destination": "/vacancy"
+      "source": "/vacancy",
+      "destination": "/vacancy.html"
     },
     {
-      "source": "/veterinary-health-management.html",
-      "destination": "/veterinary-health-management"
+      "source": "/veterinary-health-management",
+      "destination": "/veterinary-health-management.html"
     },
     {
-      "source": "/spices-pulses.html",
-      "destination": "/spices-pulses"
+      "source": "/spices-pulses",
+      "destination": "/spices-pulses.html"
     },
     {
-      "source": "/sale-of-potato-seeds.html",
-      "destination": "/sale-of-potato-seeds"
+      "source": "/sale-of-potato-seeds",
+      "destination": "/sale-of-potato-seeds.html"
     },
     {
-      "source": "/quail-farming.html",
-      "destination": "/quail-farming"
+      "source": "/quail-farming",
+      "destination": "/quail-farming.html"
     },
     {
-      "source": "/restaurant-business.html",
-      "destination": "/restaurant-business"
+      "source": "/restaurant-business",
+      "destination": "/restaurant-business.html"
     }
   ]
 }
