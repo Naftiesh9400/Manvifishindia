@@ -1,0 +1,35 @@
+{
+  "redirects": [
+    {
+      "source": "/vacancy.html",
+      "destination": "/vacancy",
+      "permanent": true
+    },
+    {
+      "source": "/veterinary-health-management.html",
+      "destination": "/veterinary-health-management",
+      "permanent": true
+    },
+    {
+      "source": "/spices-pulses.html",
+      "destination": "/spices-pulses",
+      "permanent": true
+    },
+    {
+      "source": "/sale-of-potato-seeds.html",
+      "destination": "/sale-of-potato-seeds",
+      "permanent": true
+    },
+    {
+      "source": "/quail-farming.html",
+      "destination": "/quail-farming",
+      "permanent": true
+    },
+    
+    {
+      "source": "/restaurant-business.html",
+      "destination": "/restaurant-business",
+      "permanent": true
+    }
+  ]
+}
