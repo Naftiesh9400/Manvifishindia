@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Manvi - Fish and Duck Farming India - HR Policy">
+    <meta name="description" content="Manvi - Fish and Duck Farming India - Services">
 
-    <title>HR Policy - Manvi Fish and Duck Farming India</title>
+    <title>Services - Manvi Fish and Duck Farming India</title>
 
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 
@@ -27,113 +27,84 @@
     <link href="style.css" rel="stylesheet">
     <style>
          body {
-            background-color: #F8F9FA;
-            font-family: 'Poppins', sans-serif;
-        }
-        .content-section {
-            padding: 60px 50px;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            margin: 50px auto;
-            max-width: 1200px;
-            width: 95%;
-        }
-        .content-section h2 {
-            font-weight: 700;
-            margin-bottom: 30px;
-            font-size: 2.8rem;
-            color: #2c3e50;
-            text-align: center;
-        }
-        .content-section h4 {
+             background-color: #F8F9FA;
+             font-family: 'Poppins', sans-serif;
+         }
+         .content-section {
+             padding: 60px 50px;
+             background-color: #fff;
+             border-radius: 20px;
+             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+             margin: 50px auto;
+             max-width: 1200px;
+             width: 95%;
+         }
+         .content-section h2 {
+             font-weight: 700;
+             margin-bottom: 50px; /* Increased margin for spacing */
+             font-size: 2.8rem;
+             color: #2c3e50;
+             text-align: center;
+         }
+        
+         /* NEW STYLES FOR SERVICE BOXES */
+         .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+         }
+         .service-box {
+            background-color: #FDFBFF;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #EAEAEA;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+         }
+         .service-box:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(163, 126, 242, 0.12);
+         }
+         .service-box h4 {
             font-weight: 600;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.6rem;
-            border-bottom: 2px solid #A37EF2;
-            padding-bottom: 10px;
-        }
-        .policy-item p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
+            margin-top: 0;
             margin-bottom: 15px;
-        }
-        .policy-item p strong {
-            color: #333;
-            min-width: 180px;
-            display: inline-block;
-        }
-         .policy-item ul {
-            list-style-type: none;
-            padding-left: 20px;
-        }
-         .policy-item ul li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-         .policy-item ul li::before {
-            content: "\f101";
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
             color: #A37EF2;
-            position: absolute;
-            left: 0;
-        }
-        .policy-note {
-            background-color: #F8F9FA;
-            border-left: 4px solid #A37EF2;
-            padding: 15px 20px;
-            margin-top: 15px;
-            font-style: italic;
-            color: #444;
-            border-radius: 0 8px 8px 0;
-        }
-        .download-btn-container {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .download-btn-container .btn {
-            background-color: #A37EF2;
-            border-color: #A37EF2;
-            color: white;
-            padding: 12px 30px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
-        .download-btn-container .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 15px rgba(163, 126, 242, 0.3);
-        }
+            font-size: 1.5rem;
+            /* Overriding border from previous page style */
+            border-bottom: none; 
+            padding-bottom: 0;
+         }
+         .service-box p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0;
+         }
+         /* END OF NEW STYLES */
 
-        .chat-fab { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #A37EF2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4); z-index: 10001; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; }
-        .chat-fab:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6); }
-        .chat-popup { display: none; position: fixed; bottom: 110px; right: 30px; width: 360px; max-height: 75vh; background-color: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); flex-direction: column; overflow: hidden; z-index: 10002; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.3s ease, transform 0.3s ease; }
-        .chat-popup.active { display: flex; opacity: 1; transform: translateY(0) scale(1); }
-        .chat-header { background-color: #F3EEFF; color: #333; padding: 20px; text-align: center; border-bottom: 1px solid #EAEAEA; position: relative; }
-        .chat-header h3 { margin: 0; font-size: 1.25rem; font-weight: 600; }
-        .chat-header .close-btn { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); font-size: 20px; cursor: pointer; color: #888; }
-        .chat-header .subtitle { font-size: 0.85rem; color: #777; margin-top: 5px; }
-        .chat-body { flex-grow: 1; padding: 20px; overflow-y: auto; background-color: #fff; }
-        .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
-        .chat-message .bubble { padding: 12px 18px; border-radius: 20px; max-width: 85%; word-wrap: break-word; line-height: 1.5; }
-        .chat-message .timestamp { font-size: 0.75rem; color: #aaa; margin-top: 6px; }
-        .bot-message { align-items: flex-start; }
-        .bot-message .bubble { background-color: #F1F1F5; color: #333; border-bottom-left-radius: 5px; }
-        .bot-message .timestamp { align-self: flex-start; }
-        .user-message { align-items: flex-end; }
-        .user-message .bubble { background-color: #A37EF2; color: white; border-bottom-right-radius: 5px; }
-        .user-message .timestamp { align-self: flex-end; }
-        .chat-footer { display: flex; padding: 15px; border-top: 1px solid #EAEAEA; background-color: #fff; }
-        .chat-footer input { flex-grow: 1; border: 1px solid #EAEAEA; background-color: #F9F9F9; border-radius: 25px; padding: 12px 20px; margin-right: 10px; }
-        .chat-footer input:focus { outline: none; border-color: #A37EF2; background-color: #fff; }
-        .chat-footer button { background: linear-gradient(45deg, #A37EF2, #C49FFF); color: white; border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 20px; cursor: pointer; flex-shrink: 0; box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4); }
+         .chat-fab { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #A37EF2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4); z-index: 10001; transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; }
+         .chat-fab:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6); }
+         .chat-popup { display: none; position: fixed; bottom: 110px; right: 30px; width: 360px; max-height: 75vh; background-color: #fff; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); flex-direction: column; overflow: hidden; z-index: 10002; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 0.3s ease, transform 0.3s ease; }
+         .chat-popup.active { display: flex; opacity: 1; transform: translateY(0) scale(1); }
+         .chat-header { background-color: #F3EEFF; color: #333; padding: 20px; text-align: center; border-bottom: 1px solid #EAEAEA; position: relative; }
+         .chat-header h3 { margin: 0; font-size: 1.25rem; font-weight: 600; }
+         .chat-header .close-btn { position: absolute; top: 50%; right: 20px; transform: translateY(-50%); font-size: 20px; cursor: pointer; color: #888; }
+         .chat-header .subtitle { font-size: 0.85rem; color: #777; margin-top: 5px; }
+         .chat-body { flex-grow: 1; padding: 20px; overflow-y: auto; background-color: #fff; }
+         .chat-message { margin-bottom: 15px; display: flex; flex-direction: column; }
+         .chat-message .bubble { padding: 12px 18px; border-radius: 20px; max-width: 85%; word-wrap: break-word; line-height: 1.5; }
+         .chat-message .timestamp { font-size: 0.75rem; color: #aaa; margin-top: 6px; }
+         .bot-message { align-items: flex-start; }
+         .bot-message .bubble { background-color: #F1F1F5; color: #333; border-bottom-left-radius: 5px; }
+         .bot-message .timestamp { align-self: flex-start; }
+         .user-message { align-items: flex-end; }
+         .user-message .bubble { background-color: #A37EF2; color: white; border-bottom-right-radius: 5px; }
+         .user-message .timestamp { align-self: flex-end; }
+         .chat-footer { display: flex; padding: 15px; border-top: 1px solid #EAEAEA; background-color: #fff; }
+         .chat-footer input { flex-grow: 1; border: 1px solid #EAEAEA; background-color: #F9F9F9; border-radius: 25px; padding: 12px 20px; margin-right: 10px; }
+         .chat-footer input:focus { outline: none; border-color: #A37EF2; background-color: #fff; }
+         .chat-footer button { background: linear-gradient(45deg, #A37EF2, #C49FFF); color: white; border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 20px; cursor: pointer; flex-shrink: 0; box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4); }
 
     </style>
 </head>
@@ -193,36 +164,36 @@
                         <li class=""><a href="index.html" class="">Home</a></li>
                         <li class=""><a href="about-us.html" class="">About Us</a></li>
                         <li class=""><a href="Board of directors.html" class="">Board Of Director</a></li>
-                        <li class="dropdown">
+                        <li class="dropdown active">
                             <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Services</a>
                             <ul class="dropdown-menu">
                                 <li><a href="Fish Farming.html">Fish Farming</a></li>
-                                  <li><a href="quail-farming.html">Quail Farming</a></li>
-                                  <li><a href="duck-poultry-farming.html">Duck & Poultry Farming</a></li>
-                                  <li><a href="egg-production.html">Egg Production</a></li>
-                                  <li><a href="feed-production-optimization.html">Feed Production Optimization</a></li>
-                                  <li><a href="eco-farming-manure.html">Eco Farming Manure</a></li>
-                                  <li><a href="veterinary-health-management.html">Veterinary Health Management</a></li>
-                                  <li><a href="education.html">Education Online and Project-Based Approach</a></li>
-                                  <li><a href="kadaknath-chicken-rearing.html">Kadaknath Chicken Rearing</a></li>
-                                  <li><a href="purchasing-fish-from-farmers.html">Purchasing Fish From Farmers</a></li>
-                                  <li><a href="restaurant-business.html">Restaurant Business</a></li>
-                                  <li><a href="spices-pulses.html">Spices, Pulses & Gram</a></li>
-                                  <li><a href="chilli-onion-garlic.html">Chilli, Onion & Garlic</a></li>
-                                  <li><a href="potato-seeds.html">Sale of Potato Seeds</a></li>
-                                  <li><a href="pickle-production.html">Pickle Production & Sale</a></li>
-                                  <li><a href="earthworm-manure.html">Earthworm Manure</a></li>
-                                  <li><a href="milk-work.html">Milk Work</a></li>
-                                  <li><a href="animal-husbandry.html">Animal Husbandry</a></li>
-                                  <li><a href="fish-egg-solution.html">Fish Egg Solutions</a></li>
+                                <li><a href="quail-farming.html">Quail Farming</a></li>
+                                <li><a href="duck-poultry-farming.html">Duck & Poultry Farming</a></li>
+                                <li><a href="egg-production.html">Egg Production</a></li>
+                                <li><a href="feed-production-optimization.html">Feed Production Optimization</a></li>
+                                <li><a href="eco-farming-manure.html">Eco Farming Manure</a></li>
+                                <li><a href="veterinary-health-management.html">Veterinary Health Management</a></li>
+                                <li><a href="education.html">Education Online and Project-Based Approach</a></li>
+                                <li><a href="kadaknath-chicken-rearing.html">Kadaknath Chicken Rearing</a></li>
+                                <li><a href="purchasing-fish-from-farmers.html">Purchasing Fish From Farmers</a></li>
+                                <li><a href="restaurant-business.html">Restaurant Business</a></li>
+                                <li><a href="spices-pulses.html">Spices, Pulses & Gram</a></li>
+                                <li><a href="chilli-onion-garlic.html">Chilli, Onion & Garlic</a></li>
+                                <li><a href="potato-seeds.html">Sale of Potato Seeds</a></li>
+                                <li><a href="pickle-production.html">Pickle Production & Sale</a></li>
+                                <li><a href="earthworm-manure.html">Earthworm Manure</a></li>
+                                <li><a href="milk-work.html">Milk Work</a></li>
+                                <li><a href="animal-husbandry.html">Animal Husbandry</a></li>
+                                <li><a href="fish-egg-solution.html">Fish Egg Solutions</a></li>
                             </ul>
                         </li>
                         <li class=""><a href="vacancy.html">Vacancy</a></li>
-                        <li class="dropdown active">
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">More</a>
                             <ul class="dropdown-menu">
                                 <li><a href="contact.html" class="">Contact Us</a></li>
-                                <li class="active"><a href="hr.html">HR Policy</a></li>
+                                <li><a href="hr.html">HR Policy</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -238,70 +209,44 @@
             <div class="overlay-screen"></div>
         </nav>
     </header>
+
     <div class="container content-section">
-        <h2>Human Resources Policy</h2>
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            
+            <div class="service-box">
+                <h4>(1) Fisheries Department</h4>
+                <p>Fish Farming, Buying and Selling Fish, Fish Feed, Buying and Selling Fish Eggs and Baby Fish, Buying and Selling Coloured Fish, Buying and Selling Fish Abroad.</p>
+            </div>
 
-        <div class="download-btn-container">
-            <a href="assets/img/HR Policy.pdf" class="btn" download>
-                <i class="fas fa-file-pdf"></i> Download Full Policy (PDF)
-            </a>
-        </div>
+            <div class="service-box">
+                <h4>(2) Animal Husbandry and Dairy Department</h4>
+                <p>Cow/Buffalo/Goat rearing, Goat purchase and sale, Milk Dairy, Milk product manufacturing and sale, Poultry/Duck rearing, Poultry/Duck feed purchase and sale, Poultry/Duck chicks purchase and sale, Poultry/Duck egg purchase and sale, Kadaknath chicken rearing, Manufacture and purchase of animal feed and earthworm compost.</p>
+            </div>
+            
+            <div class="service-box">
+                <h4>(3) Vegetable Department</h4>
+                <p>Chillies, Potato, Onion, Garlic, Ginger, Tomato, Pumpkin, Bottle Gourd, Bitter Gourd, Peas, Ridge Gourd, Bottle Gourd, Beans, Cabbage, Cauliflower, Mushroom, Eggplant, Parmal.</p>
+            </div>
+            
+            <div class="service-box">
+                <h4>(4) Agriculture Department</h4>
+                <p>Paddy, Wheat, Moong Dal, Tuvar Dal, Gram, Soybean, Mustard, Groundnut, Bottle Gourd.</p>
+            </div>
 
-        <div class="policy-item">
-            <h4>Attendance & Working Hours</h4>
-            <p><strong>Working Hours:</strong> 9:30 AM to 6:30 PM (Includes 1-hour lunch break from 1:00 PM to 2:00 PM).</p>
-            <p><strong>Working Days:</strong> Monday, Tuesday, Wednesday, Friday, Saturday, Sunday.</p>
-            <p><strong>Weekly Off:</strong> Thursday is the fixed weekly off day.</p>
-            <p><strong>Late Coming:</strong> A 10-minute grace period is provided. Accumulating 3 late comings (after the grace period) will result in a half-day salary deduction.</p>
-            <p class="policy-note"><strong>Note:</strong> Employees are expected to be flexible with timings based on work requirements and in case of emergencies.</p>
-        </div>
+            <div class="service-box">
+                <h4>(5) Spices Department</h4>
+                <p>Red chillies, whole spices, turmeric, coriander, cardamom, cloves, bay leaves, Black mustard, yellow mustard, cumin.</p>
+            </div>
 
-        <div class="policy-item">
-            <h4>Leave Policy</h4>
-            <ul>
-                <li>After probation, employees are entitled to 02 Paid Leaves (PL) every month. Unused leaves will carry forward to the next month.</li>
-                <li>Female employees are entitled to an additional 1 PL each month, which does not carry forward if unused.</li>
-                <li>During the 6-month probation period, employees are provided with 1 paid leave per month (total of 6).</li>
-            </ul>
-            <p class="policy-note"><strong>Note:</strong> All leaves (PL or CL) require prior approval from the HOD/HR. Unapproved leaves will be treated as unpaid.</p>
-        </div>
-        
-        <div class="policy-item">
-            <h4>Joining & Probation</h4>
-            <p><strong>Probation Period:</strong> 06 Months. An Appointment Letter will be provided after 3 months, upon successful performance review.</p>
-            <p><strong>Documents Required:</strong> The following documents must be submitted within one week of joining:</p>
-            <ul>
-                <li>Relevant Educational Degrees and Certificates</li>
-                <li>Experience Letter (if applicable)</li>
-                <li>Last three months' salary slips (if applicable)</li>
-                <li>Aadhaar Card, PAN Card, and 2 recent passport-sized photographs</li>
-            </ul>
-        </div>
-        
-        <div class="policy-item">
-            <h4>Relieving & Resignation Policy</h4>
-            <p><strong>Resignation:</strong> A written resignation must be submitted to the respective HOD, HR department, and management for acceptance.</p>
-            <p><strong>Notice Period:</strong> A 30-day notice period is mandatory.</p>
-            <p><strong>Full & Final Settlement:</strong> The final settlement will be processed within 45 days from the date of resignation acceptance.</p>
-            <p class="policy-note"><strong>Note:</strong> If an employee cannot serve the notice period, a 30-day salary will be deducted or must be paid to the company as a penalty.</p>
-        </div>
+            <div class="service-box">
+                <h4>(6) Consumer Department</h4>
+                <p>Tobacco, Bidi, Pan Masala, Pickles, Papad, Potato/Paddy Sack, Stationery, Cement Pillars, Cement Locking Tiles, Agricultural Plants, Agricultural Machinery, Wooden Furniture, Murmure (puffed rice).</p>
+            </div>
 
-        <div class="policy-item">
-            <h4>Termination Policy</h4>
-            <p><strong>During Probation:</strong> The company can terminate an employee without prior notice if their performance is unsatisfactory.</p>
-            <p><strong>Permanent Employee:</strong> The company can terminate an employee immediately and without notice in cases of proven disloyalty.</p>
-            <ul>
-                <li>If an employee does not serve the notice period, one month's salary will not be given.</li>
-                <li>If the employer does not want the employee to serve the notice period, the employer will pay the Basic Pay (25% of the salary).</li>
-            </ul>
-        </div>
-
-        <div class="policy-item">
-            <h4>Anti-Harassment Policy</h4>
-            <p>The company prohibits discriminatory harassment based on race, color, religion, sex, national origin, age, disability, sexual orientation, gender identity, or veteran status.</p>
-              <p class="policy-note"><strong>Note:</strong> Employees can file a complaint with the HR department or their HOD.</p>
         </div>
     </div>
+    
     <div class="chat-fab" id="chat-fab"><i class="fas fa-comment-dots"></i></div>
     <div class="chat-popup" id="chat-popup">
         <div class="chat-header">
@@ -316,6 +261,7 @@
             <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
+    
     <footer class="bg-dark text-light" style="background-image: url(assets/img/shape/8.png);">
         <div class="container">
             <div class="f-items default-padding">
@@ -327,7 +273,6 @@
                             <form id="newsletter-form" action="https://formsubmit.co/naftieshmandal7@gmail.com" method="POST">
                                 <input type="email" placeholder="Your Email" class="form-control" name="email" required>
                                 <button type="submit"> Go</button>
-                                <!-- FormSubmit Hidden Fields for Newsletter -->
                                 <input type="hidden" name="_subject" value="New Newsletter Subscription!">
                                 <input type="hidden" name="_captcha" value="false">
                                 <input type="hidden" name="_autoresponse" value="Thank you for subscribing to the Manvi Fish and Duck Farming newsletter!">
@@ -340,7 +285,7 @@
                             <ul>
                                 <li><a href="about-us.html">About Us</a></li>
                                 <li><a href="vacancy.html">Vacancy</a></li>
-                                <li><a href="Fish Farming.html">Services</a></li>
+                                <li><a href="services.html">Services</a></li>
                                 <li><a href="contact.html">Contact Us</a></li>
                                 <li><a href="Board of directors.html">Board Of Directors</a></li>
                             </ul>
@@ -391,7 +336,7 @@
                                     </div>
                                     <div class="content">
                                         <strong>Address:</strong>
-                                       Kankari Pancharul Udaynarayanpur Howrah West Bengal-711225, India
+                                        Kankari Pancharul Udaynarayanpur Howrah West Bengal-711225, India
                                     </div>
                                 </li>
                                 <li>
@@ -427,7 +372,7 @@
         </div>
         <div class="shape-right-bottom"><img src="assets/img/shape/7.png" alt="Image Not Found"></div>
     </footer>
-     <!-- Success Popup Modal -->
+    
     <div id="success-popup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
         <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);">
             <span class="close-popup" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
@@ -436,8 +381,6 @@
         </div>
     </div>
     
-    <!-- jQuery Frameworks
-    ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.appear.js"></script>
@@ -456,7 +399,7 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
- <!-- Custom Popup JS -->
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const homeContactForm = document.querySelector('#home-contact-form');
@@ -558,4 +501,3 @@
     </script>
 </body>
 </html>
-
