@@ -323,9 +323,13 @@
                             <p>
                                 Manvi Fish and Duck Farming India 
                             </p>
-                            <form action="#">
-                                <input type="email" placeholder="Your Email" class="form-control" name="email">
-                                <button type="submit"> Go</button>  
+                            <form id="newsletter-form" action="https://formsubmit.co/naftieshmandal7@gmail.com" method="POST">
+                                <input type="email" placeholder="Your Email" class="form-control" name="email" required>
+                                <button type="submit"> Go</button>
+                                <!-- FormSubmit Hidden Fields for Newsletter -->
+                                <input type="hidden" name="_subject" value="New Newsletter Subscription!">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_autoresponse" value="Thank you for subscribing to the Manvi Fish and Duck Farming newsletter!">
                             </form>
                         </div>
                     </div>
@@ -452,6 +456,15 @@
     </footer>
     <!-- End Footer -->
     
+   <!-- Success Popup Modal -->
+    <div id="success-popup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+        <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);">
+            <span class="close-popup" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2>Success!</h2>
+            <p>Your message has been sent successfully.</p>
+        </div>
+    </div>
+    
     <!-- jQuery Frameworks
     ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
@@ -472,6 +485,70 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
+ <!-- Custom Popup JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeContactForm = document.querySelector('#home-contact-form');
+            const newsletterForm = document.querySelector('#newsletter-form');
+            const successPopup = document.getElementById('success-popup');
+            const closePopupButton = document.querySelector('.close-popup');
+            const popupMessage = successPopup.querySelector('p');
+
+            function handleFormSubmit(formElement, successMessage) {
+                const formData = new FormData(formElement);
+                const submitButton = formElement.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+
+                fetch(formElement.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .catch(error => {
+                    console.warn('Fetch error:', error);
+                })
+                .finally(() => {
+                    popupMessage.textContent = successMessage;
+                    successPopup.style.display = 'block';
+                    formElement.reset();
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                });
+            }
+
+            if (homeContactForm) {
+                homeContactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    handleFormSubmit(this, 'Your message has been sent successfully.');
+                });
+            }
+
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    handleFormSubmit(this, 'Thank you for subscribing!');
+                });
+            }
+
+            const closePopup = () => {
+                successPopup.style.display = 'none';
+            };
+
+            if (closePopupButton) {
+                closePopupButton.addEventListener('click', closePopup);
+            }
+            window.addEventListener('click', function(event) {
+                if (event.target == successPopup) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
