@@ -92,230 +92,6 @@
              left: 0;
              top: 5px;
          }
-
-         .chat-fab {
-             position: fixed;
-             bottom: 30px;
-             right: 30px;
-             width: 65px;
-             height: 65px;
-             background-color: #A37EF2;
-             border-radius: 50%;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             color: white;
-             font-size: 30px;
-             cursor: pointer;
-             box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4);
-             z-index: 10001;
-             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
-         }
-         
-         .chat-fab:hover {
-             transform: scale(1.1);
-             box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6);
-         }
-
-         .chat-popup {
-             display: none;
-             position: fixed;
-             bottom: 110px;
-             right: 30px;
-             width: 360px;
-             max-height: 75vh;
-             background-color: #fff;
-             border-radius: 20px;
-             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-             flex-direction: column;
-             overflow: hidden;
-             z-index: 10002;
-             opacity: 0;
-             transform: translateY(20px) scale(0.95);
-             transition: opacity 0.3s ease, transform 0.3s ease;
-         }
-
-         .chat-popup.active {
-             display: flex;
-             opacity: 1;
-             transform: translateY(0) scale(1);
-         }
-
-         .chat-header {
-             background-color: #F3EEFF;
-             color: #333;
-             padding: 20px;
-             text-align: center;
-             border-bottom: 1px solid #EAEAEA;
-             position: relative;
-         }
-         
-         .chat-header h3 {
-             margin: 0;
-             font-size: 1.25rem;
-             font-weight: 600;
-         }
-
-         .chat-header .close-btn {
-             position: absolute;
-             top: 50%;
-             right: 20px;
-             transform: translateY(-50%);
-             font-size: 20px;
-             cursor: pointer;
-             color: #888;
-         }
-         
-          .chat-header .subtitle {
-             font-size: 0.85rem;
-             color: #777;
-             margin-top: 5px;
-         }
-
-         .chat-body {
-             flex-grow: 1;
-             padding: 20px;
-             overflow-y: auto;
-             background-color: #fff;
-         }
-
-         .chat-message {
-             margin-bottom: 15px;
-             display: flex;
-             flex-direction: column;
-         }
-         
-         .chat-message .bubble {
-             padding: 12px 18px;
-             border-radius: 20px;
-             max-width: 85%;
-             word-wrap: break-word;
-             line-height: 1.5;
-         }
-         
-         .chat-message .timestamp {
-             font-size: 0.75rem;
-             color: #aaa;
-             margin-top: 6px;
-         }
-         
-         .bot-message {
-             align-items: flex-start;
-         }
-         .bot-message .bubble {
-             background-color: #F1F1F5;
-             color: #333;
-             border-bottom-left-radius: 5px;
-         }
-         .bot-message .timestamp {
-             align-self: flex-start;
-         }
-
-         .user-message {
-             align-items: flex-end;
-         }
-         .user-message .bubble {
-             background-color: #A37EF2;
-             color: white;
-             border-bottom-right-radius: 5px;
-         }
-         .user-message .timestamp {
-             align-self: flex-end;
-         }
-         
-         .bot-message .quick-reply-btn {
-             background: #fff;
-             border: 1px solid #D1C4E9;
-             color: #A37EF2;
-             padding: 10px 18px;
-             border-radius: 20px;
-             cursor: pointer;
-             margin-top: 10px;
-             font-weight: 500;
-             transition: all 0.2s;
-         }
-         
-         .bot-message .quick-reply-btn:hover {
-             background-color: #A37EF2;
-             color: white;
-             border-color: #A37EF2;
-         }
-         
-         .bot-message .info-form {
-              width: 100%;
-         }
-
-         .bot-message .info-form input {
-             width: 100%;
-             padding: 12px;
-             border: none;
-             border-bottom: 1px solid #ddd;
-             margin-bottom: 12px;
-             font-size: 0.9rem;
-             background: transparent;
-         }
-         
-         .bot-message .info-form input:focus {
-             outline: none;
-             border-bottom-color: #A37EF2;
-         }
-
-         .bot-message .info-form .form-error {
-             color: #E53935;
-             font-size: 0.8rem;
-             margin-top: -8px;
-             margin-bottom: 8px;
-             display: none;
-         }
-         
-         .bot-message .info-form .send-info-btn {
-             background: linear-gradient(45deg, #A37EF2, #C49FFF);
-             color: white;
-             border: none;
-             padding: 12px 20px;
-             border-radius: 25px;
-             cursor: pointer;
-             display: block;
-             margin: 15px auto 0;
-             width: 60%;
-             font-weight: 500;
-             box-shadow: 0 4px 10px rgba(163, 126, 242, 0.3);
-         }
-         
-         .chat-footer {
-             display: flex;
-             padding: 15px;
-             border-top: 1px solid #EAEAEA;
-             background-color: #fff;
-         }
-
-         .chat-footer input {
-             flex-grow: 1;
-             border: 1px solid #EAEAEA;
-             background-color: #F9F9F9;
-             border-radius: 25px;
-             padding: 12px 20px;
-             margin-right: 10px;
-         }
-         
-          .chat-footer input:focus {
-             outline: none;
-             border-color: #A37EF2;
-             background-color: #fff;
-         }
-
-         .chat-footer button {
-             background: linear-gradient(45deg, #A37EF2, #C49FFF);
-             color: white;
-             border: none;
-             border-radius: 50%;
-             width: 48px;
-             height: 48px;
-             font-size: 20px;
-             cursor: pointer;
-             flex-shrink: 0;
-             box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4);
-         }
     </style>
 </head>
 
@@ -410,7 +186,7 @@
                          <li class="dropdown">
                              <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Services</a>
                              <ul class="dropdown-menu">
-                                <li><a href="Fish Farming.html">Fish Farming</a></li>
+                                 <li><a href="Fish Farming.html">Fish Farming</a></li>
                                  <li><a href="quail-farming.html">Quail Farming</a></li>
                                  <li><a href="duck-poultry-farming.html">Duck & Poultry Farming</a></li>
                                  <li><a href="egg-production.html">Egg Production</a></li>
@@ -491,32 +267,7 @@
             </div>
         </div>
     </div>
-    <div class="chat-fab" id="chat-fab">
-         <i class="fas fa-comment-dots"></i>
-     </div>
-
-     <div class="chat-popup" id="chat-popup">
-         <div class="chat-header">
-             <span class="close-btn" id="close-chat">&times;</span>
-             <h3>Contact Us</h3>
-             <p class="subtitle">We'll respond as soon as we can.</p>
-         </div>
-         <div class="chat-body" id="chat-body">
-             <div class="chat-message bot-message" id="initial-bot-message">
-                 <div class="bubble">
-                     Let me know if you have any questions!
-                     <button class="quick-reply-btn" id="quick-reply">I have a question</button>
-                 </div>
-                 <div class="timestamp">Manvi Fish and Duck Farming India Pvt Ltd · 1:30 PM</div>
-             </div>
-         </div>
-         <div class="chat-footer">
-             <input type="text" id="chat-input" placeholder="Type a message...">
-             <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
-         </div>
-     </div>
-
-
+    
      <footer class="bg-dark text-light" style="background-image: url(assets/img/shape/8.png);">
          <div class="container">
              <div class="f-items default-padding">
@@ -529,76 +280,69 @@
                                  Manvi Fish and Duck Farming India 
                              </p>
                              <form id="newsletter-form" action="https://formsubmit.co/naftieshmandal7@gmail.com" method="POST">
-                                <input type="email" placeholder="Your Email" class="form-control" name="email" required>
-                                <button type="submit"> Go</button>
-                                <!-- FormSubmit Hidden Fields for Newsletter -->
-                                <input type="hidden" name="_subject" value="New Newsletter Subscription!">
-                                <input type="hidden" name="_captcha" value="false">
-                                <input type="hidden" name="_autoresponse" value="Thank you for subscribing to the Manvi Fish and Duck Farming newsletter!">
-                            </form>
+                                 <input type="email" placeholder="Your Email" class="form-control" name="email" required>
+                                 <button type="submit"> Go</button>
+                                 <input type="hidden" name="_subject" value="New Newsletter Subscription!">
+                                 <input type="hidden" name="_captcha" value="false">
+                                 <input type="hidden" name="_autoresponse" value="Thank you for subscribing to the Manvi Fish and Duck Farming newsletter!">
+                             </form>
                          </div>
                      </div>
                      <div class="col-lg-2 col-md-6 item">
-                    <div class="footer-item link">
-                        <h4 class="widget-title">Explore</h4>
-                        <ul>
-                            <li>
-                                <a href="about-us.html">About Us</a>
-                            </li>
-                            <li>
-                                <a href="vacancy.html">Vacancy</a>
-                            </li>
-                            <!-- <li>
-                                <a href="blog-single-with-sidebar.html">News & Media</a>
-                            </li> -->
-                            <!-- <li>
-                                <a href="services.html">Services</a>
-                            </li> -->
-                            <li>
-                                <a href="contact.html">Contact Us</a>
-                            </li>
-                            <li>
-                                <a href="Board of directors.html">Boaard Of Directors</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                     <div class="footer-item link">
+                         <h4 class="widget-title">Explore</h4>
+                         <ul>
+                             <li>
+                                 <a href="about-us.html">About Us</a>
+                             </li>
+                             <li>
+                                 <a href="vacancy.html">Vacancy</a>
+                             </li>
+                             <li>
+                                 <a href="contact.html">Contact Us</a>
+                             </li>
+                             <li>
+                                 <a href="Board of directors.html">Boaard Of Directors</a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
 
                  <div class="col-lg-3 col-md-6 item">
-                        <div class="footer-item recent-post">
-                            <h4 class="widget-title">Recent Posts</h4>
-                            <ul>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="blog-single-with-sidebar.html">
-                                            <img src="assets/img/800x800.png" alt="Thumb">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <div class="meta-title">
-                                            <span class="post-date">4 January 2025</span>
-                                        </div>
-                                        <h5><a href="404.html">Community Engagement And Events </a></h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="blog-single-with-sidebar.html">
-                                            <img src="assets/img/800x800.png" alt="Thumb">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <div class="meta-title">
-                                            <span class="post-date">4 January 2025</span>
-                                        </div>
-                                        <h5><a href="404.html">Water Conservation Strategies </a></h5>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                     <div class="footer-item recent-post">
+                         <h4 class="widget-title">Recent Posts</h4>
+                         <ul>
+                             <li>
+                                 <div class="thumb">
+                                     <a href="blog-single-with-sidebar.html">
+                                         <img src="assets/img/800x800.png" alt="Thumb">
+                                     </a>
+                                 </div>
+                                 <div class="info">
+                                     <div class="meta-title">
+                                         <span class="post-date">4 January 2025</span>
+                                     </div>
+                                     <h5><a href="404.html">Community Engagement And Events </a></h5>
+                                 </div>
+                             </li>
+                             <li>
+                                 <div class="thumb">
+                                     <a href="blog-single-with-sidebar.html">
+                                         <img src="assets/img/800x800.png" alt="Thumb">
+                                     </a>
+                                 </div>
+                                 <div class="info">
+                                     <div class="meta-title">
+                                         <span class="post-date">4 January 2025</span>
+                                     </div>
+                                     <h5><a href="404.html">Water Conservation Strategies </a></h5>
+                                 </div>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
 
-                    
+                     
                      <div class="col-lg-3 col-md-6 item">
                          <div class="footer-item contact">
                              <h4 class="widget-title">Contact Info</h4>
@@ -647,8 +391,7 @@
              <img src="assets/img/shape/7.png" alt="Image Not Found">
          </div>
      </footer>
-      <!-- Success Popup Modal -->
-    <div id="success-popup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+      <div id="success-popup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
         <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);">
             <span class="close-popup" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
             <h2>Success!</h2>
@@ -656,8 +399,6 @@
         </div>
     </div>
     
-    <!-- jQuery Frameworks
-    ============================================= -->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.appear.js"></script>
@@ -676,8 +417,7 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
- <!-- Custom Popup JS -->
-    <script>
+ <script>
         document.addEventListener('DOMContentLoaded', function() {
             const homeContactForm = document.querySelector('#home-contact-form');
             const newsletterForm = document.querySelector('#newsletter-form');
@@ -741,99 +481,338 @@
         });
     </script>
 
-     <script>
-         document.addEventListener('DOMContentLoaded', function() {
-     const chatFab = document.getElementById('chat-fab');
-     const chatPopup = document.getElementById('chat-popup');
-     const closeChat = document.getElementById('close-chat');
-     const chatBody = document.getElementById('chat-body');
-     const chatInput = document.getElementById('chat-input');
-     const sendBtn = document.getElementById('send-btn');
-
-     // --- Main Chat Logic ---
-     chatFab.addEventListener('click', () => chatPopup.classList.toggle('active'));
-     closeChat.addEventListener('click', () => chatPopup.classList.remove('active'));
-
-     const addMessage = (sender, message, isHtml = false) => {
-         const messageDiv = document.createElement('div');
-         const senderClass = sender === 'user' ? 'user-message' : 'bot-message';
-         messageDiv.classList.add('chat-message', senderClass);
-
-         const bubble = document.createElement('div');
-         bubble.classList.add('bubble');
-         bubble.innerHTML = isHtml ? message : message.replace(/\n/g, '<br>');
-
-         const timestamp = document.createElement('div');
-         timestamp.classList.add('timestamp');
-         const time = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true });
-         timestamp.textContent = sender === 'user' ? `${time} · Sent` : `Manvi Fish... · ${time}`;
-
-         messageDiv.appendChild(bubble);
-         messageDiv.appendChild(timestamp);
-         chatBody.appendChild(messageDiv);
-         chatBody.scrollTop = chatBody.scrollHeight;
-         return bubble; 
-     };
-
-     const handleSend = () => {
-         const message = chatInput.value.trim();
-         if (message) {
-             addMessage('user', message);
-             chatInput.value = '';
-             setTimeout(() => addMessage('bot', "Thanks for your message! We'll get back to you shortly."), 1000);
-         }
-     };
-     
-     sendBtn.addEventListener('click', handleSend);
-     chatInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleSend());
-
-     // --- Dynamic Form Logic ---
-     chatBody.addEventListener('click', function(event) {
-         if (event.target.matches('#quick-reply')) {
-             event.target.closest('.chat-message').remove(); 
-             addMessage('user', 'I have a question');
-             setTimeout(() => {
-                 const formHtml = `
-                     <p>We just need some more information from you to proceed:</p>
-                     <div class="info-form">
-                         <input type="text" name="name" placeholder="Name" required>
-                         <input type="email" name="email" placeholder="Email" required>
-                         <div class="form-error">Please fill in all fields.</div>
-                         <button class="send-info-btn">Send</button>
-                     </div>`;
-                 addMessage('bot', formHtml, true);
-             }, 1000);
-         }
-         
-         if (event.target.matches('.send-info-btn')) {
-             const bubble = event.target.closest('.bubble');
-             const nameInput = bubble.querySelector('input[name="name"]');
-             const emailInput = bubble.querySelector('input[name="email"]');
-             const formError = bubble.querySelector('.form-error');
-             const name = nameInput.value.trim();
-             const email = emailInput.value.trim();
-
-             if (name && email) {
-                 const subject = "New Inquiry from Website";
-                 const body = `Name: ${name}\nEmail: ${email}\n\nMessage:`;
-                 window.location.href = `mailto:naftieshmandl02@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                 
-                 addMessage('bot', 'Thank you! Your email client has been opened to send your details.');
-                 bubble.innerHTML = `<p>Thanks for providing your details!</p>`;
-             } else {
-                 formError.style.display = 'block';
-             }
-         }
-     });
-
-     // Close on outside click
-     document.body.addEventListener('click', function(event) {
-          if (!chatPopup.contains(event.target) && !chatFab.contains(event.target) && chatPopup.classList.contains('active')) {
-             chatPopup.classList.remove('active');
-          }
-     });
-});
-     </script>
 </body>
+<style>
+    /* CHAT WIDGET STYLES */
+    .chat-fab { 
+        position: fixed; 
+        bottom: 30px; 
+        right: 30px; 
+        width: 65px; 
+        height: 65px; 
+        background-color: #A37EF2; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        color: white; 
+        font-size: 30px; 
+        cursor: pointer; 
+        box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4); 
+        z-index: 10001; 
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; 
+    }
 
+    .chat-fab:hover { 
+        transform: scale(1.1); 
+        box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6); 
+    }
+
+    .chat-popup { 
+        display: none; 
+        position: fixed; 
+        bottom: 110px; 
+        right: 30px; 
+        width: 360px; 
+        max-height: 75vh; 
+        background-color: #fff; 
+        border-radius: 20px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        flex-direction: column; 
+        overflow: hidden; 
+        z-index: 10002; 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.95); 
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+    }
+
+    .chat-popup.active { 
+        display: flex; 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+
+    .chat-header { 
+        background-color: #F3EEFF; 
+        color: #333; 
+        padding: 20px; 
+        text-align: center; 
+        border-bottom: 1px solid #EAEAEA; 
+        position: relative; 
+    }
+
+    .chat-header h3 { 
+        margin: 0; 
+        font-size: 1.25rem; 
+        font-weight: 600; 
+    }
+
+    .chat-header .close-btn { 
+        position: absolute; 
+        top: 50%; 
+        right: 20px; 
+        transform: translateY(-50%); 
+        font-size: 20px; 
+        cursor: pointer; 
+        color: #888; 
+    }
+
+    .chat-header .subtitle { 
+        font-size: 0.85rem; 
+        color: #777; 
+        margin-top: 5px; 
+    }
+
+    .chat-body { 
+        flex-grow: 1; 
+        padding: 20px; 
+        overflow-y: auto; 
+        background-color: #fff; 
+    }
+
+    .chat-message { 
+        margin-bottom: 15px; 
+        display: flex; 
+        flex-direction: column; 
+    }
+
+    .chat-message .bubble { 
+        padding: 12px 18px; 
+        border-radius: 20px; 
+        max-width: 85%; 
+        word-wrap: break-word; 
+        line-height: 1.5; 
+    }
+
+    .chat-message .timestamp { 
+        font-size: 0.75rem; 
+        color: #aaa; 
+        margin-top: 6px; 
+    }
+
+    .bot-message { 
+        align-items: flex-start; 
+    }
+
+    .bot-message .bubble { 
+        background-color: #F1F1F5; 
+        color: #333; 
+        border-bottom-left-radius: 5px; 
+    }
+
+    .bot-message .timestamp { 
+        align-self: flex-start; 
+    }
+
+    .user-message { 
+        align-items: flex-end; 
+    }
+
+    .user-message .bubble { 
+        background-color: #A37EF2; 
+        color: white; 
+        border-bottom-right-radius: 5px; 
+    }
+
+    .user-message .timestamp { 
+        align-self: flex-end; 
+    }
+
+    .chat-footer { 
+        display: flex; 
+        padding: 15px; 
+        border-top: 1px solid #EAEAEA; 
+        background-color: #fff; 
+    }
+
+    .chat-footer input { 
+        flex-grow: 1; 
+        border: 1px solid #EAEAEA; 
+        background-color: #F9F9F9; 
+        border-radius: 25px; 
+        padding: 12px 20px; 
+        margin-right: 10px; 
+        transition: border-color 0.3s ease;
+    }
+
+    .chat-footer input:focus { 
+        outline: none; 
+        border-color: #A37EF2; 
+        background-color: #fff; 
+    }
+
+    .chat-footer button { 
+        background: linear-gradient(45deg, #A37EF2, #C49FFF); 
+        color: white; 
+        border: none; 
+        border-radius: 50%; 
+        width: 48px; 
+        height: 48px; 
+        font-size: 20px; 
+        cursor: pointer; 
+        flex-shrink: 0; 
+        box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4);
+        transition: transform 0.2s ease;
+    }
+    .chat-footer button:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="chat-fab" id="chat-fab">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+        <span class="close-btn" id="close-chat">&times;</span>
+        <h3>Contact Us</h3>
+        <p class="subtitle">We'll respond as soon as we can.</p>
+    </div>
+    <div class="chat-body" id="chat-body">
+        </div>
+    <div class="chat-footer">
+        <form id="chat-form" action="https://formsubmit.co/naftieshmandal02@gmail.com" method="POST" style="display: flex; width: 100%;">
+            <input type="hidden" name="_subject" value="New Chat Message from Website!">
+            <input type="hidden" name="name" id="chat-name">
+            <input type="hidden" name="email" id="chat-email">
+            <input type="hidden" name="phone" id="chat-phone">
+            
+            <input type="hidden" name="_next" value="REPLACE_WITH_YOUR_PAGE_URL">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <input type="text" id="chat-input" name="message" placeholder="Type a message..." required>
+            <button type="submit" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatFab = document.getElementById('chat-fab');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatForm = document.getElementById('chat-form');
+
+        // NEW: Set the _next field to the current page URL
+        const nextUrlField = document.querySelector('input[name="_next"]');
+        if (nextUrlField) {
+            nextUrlField.value = window.location.href;
+        }
+
+        const nameField = document.getElementById('chat-name');
+        const emailField = document.getElementById('chat-email');
+        const phoneField = document.getElementById('chat-phone');
+
+        let chatState = 'awaiting-name';
+        let userData = {};
+        let chatInitialized = false;
+
+        const questions = {
+            'awaiting-name': "Hi there! To get started, what's your full name?",
+            'awaiting-email': "Thanks, {name}! What's your email address?",
+            'awaiting-phone': "Got it. And what's your phone number?",
+            'awaiting-message': "Perfect! How can we help you today?",
+        };
+
+        const addMessage = (sender, message) => {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
+            msgDiv.innerHTML = `<div class="bubble">${message}</div><div class="timestamp">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>`;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+
+        const askQuestion = () => {
+            let question = questions[chatState];
+            if (question) {
+                if (userData.name) {
+                    question = question.replace('{name}', userData.name.split(' ')[0]);
+                }
+                setTimeout(() => addMessage('bot', question), 500);
+            }
+        };
+
+        const resetChat = () => {
+            chatBody.innerHTML = '';
+            chatState = 'awaiting-name';
+            userData = {};
+            chatInput.value = '';
+            chatInput.disabled = false;
+            sendBtn.disabled = false;
+            chatInput.placeholder = "Type your name...";
+            askQuestion();
+            chatInitialized = true;
+        };
+
+        chatFab.addEventListener('click', () => {
+            chatPopup.classList.toggle('active');
+            if (chatPopup.classList.contains('active') && !chatInitialized) {
+                resetChat();
+            }
+        });
+
+        closeChat.addEventListener('click', () => chatPopup.classList.remove('active'));
+
+        const handleUserInput = () => {
+            const message = chatInput.value.trim();
+            if (!message && chatState !== 'awaiting-message') return;
+
+            if (chatState !== 'awaiting-message') {
+                addMessage('user', message);
+            }
+            
+            chatInput.value = '';
+
+            switch (chatState) {
+                case 'awaiting-name':
+                    userData.name = message;
+                    nameField.value = message;
+                    chatState = 'awaiting-email';
+                    chatInput.placeholder = "Type your email...";
+                    break;
+                case 'awaiting-email':
+                    if (!/^\S+@\S+\.\S+$/.test(message)) {
+                        addMessage('bot', "That doesn't look like a valid email. Please try again.");
+                        return false;
+                    }
+                    userData.email = message;
+                    emailField.value = message;
+                    chatState = 'awaiting-phone';
+                    chatInput.placeholder = "Type your phone number...";
+                    break;
+                case 'awaiting-phone':
+                    userData.phone = message;
+                    phoneField.value = message;
+                    chatState = 'awaiting-message';
+                    chatInput.placeholder = "Type your message...";
+                    break;
+                case 'awaiting-message':
+                    // Just before submitting, show the final message
+                    addMessage('user', message);
+                    chatInput.disabled = true;
+                    sendBtn.disabled = true;
+                    setTimeout(() => {
+                        addMessage('bot', "Thank you! Sending your message...");
+                    }, 500);
+                    return true;
+            }
+            askQuestion();
+            return false;
+        };
+        
+        const submitForm = (e) => {
+            e.preventDefault();
+            const isReadyToSubmit = handleUserInput();
+            if (isReadyToSubmit) {
+                 setTimeout(() => chatForm.submit(), 1200);
+            }
+        };
+        
+        chatForm.addEventListener('submit', submitForm);
+    });
+</script>
 </html>
