@@ -33,10 +33,200 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
+    <!-- Popup Banner Styles -->
+    <style>
+        /* Popup Banner Styles */
+        .popup-banner-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 10003;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in-out;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .popup-banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px; /* Fixed maximum width for all screens */
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: scaleIn 0.3s ease-in-out;
+        }
+        
+        /* Fixed aspect ratio container for the banner */
+        .popup-banner-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Creates 1:1 aspect ratio (square) */
+            overflow: hidden;
+        }
+        
+        .popup-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/img/popup-banner.jpg'); /* Replace with your banner image */
+            background-size: cover; /* Ensures image covers the entire area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+        
+        .popup-banner:hover {
+            transform: scale(1.03);
+        }
+        
+        .popup-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            border: 2px solid #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .popup-close-btn:hover {
+            background-color: rgba(255, 0, 0, 0.9);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        /* Banner text overlay (optional) */
+        .banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px 15px 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .banner-text h3 {
+            margin: 0 0 5px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .banner-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(0.85); opacity: 0; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .popup-banner-overlay {
+                padding: 10px;
+            }
+            
+            .popup-banner-container {
+                max-width: 100%;
+                border-radius: 8px;
+            }
+            
+            .popup-close-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 18px;
+                top: 8px;
+                right: 8px;
+            }
+            
+            .banner-text h3 {
+                font-size: 1.2rem;
+            }
+            
+            .banner-text p {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .popup-banner-container {
+                max-width: 600px; /* Slightly larger on very big screens */
+            }
+        }
+        
+        /* Landscape mode on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .popup-banner-container {
+                max-width: 400px;
+            }
+            
+            .popup-banner-wrapper {
+                padding-bottom: 80%; /* Slightly rectangular for landscape */
+            }
+        }
+        
+        /* Prevent body scroll when popup is open */
+        body.popup-open {
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
 
+    <!-- Popup Banner -->
+    <div class="popup-banner-overlay" id="popupBanner">
+        <div class="popup-banner-container">
+            <div class="popup-close-btn" id="closePopup">×</div>
+            <div class="popup-banner-wrapper">
+                <div class="popup-banner" id="popupBannerContent">
+                    <!-- Optional text overlay -->
+                    <div class="banner-text">
+                        <h3>Special Offer!</h3>
+                        <p>Click to discover our exclusive deals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rest of your existing HTML code remains the same -->
     <!-- Start Preloader 
     ============================================= -->
     <div id="preloader">
@@ -1220,6 +1410,115 @@
     <script src="assets/js/ScrollTrigger.min.js"></script>
     <script src="assets/js/SplitText.min.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Popup Banner Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get popup elements
+            const popupBanner = document.getElementById('popupBanner');
+            const closePopupBtn = document.getElementById('closePopup');
+            const popupBannerContent = document.getElementById('popupBannerContent');
+            const body = document.body;
+            
+            // Timer for reappearing after 1 minute
+            let popupTimer = null;
+            
+            // Function to show popup
+            function showPopup() {
+                popupBanner.style.display = 'flex';
+                body.classList.add('popup-open');
+                // Clear any existing timer
+                if (popupTimer) {
+                    clearTimeout(popupTimer);
+                    popupTimer = null;
+                }
+            }
+            
+            // Function to hide popup and set timer to show again after 1 minute
+            function hidePopup() {
+                // Add closing animation
+                popupBanner.style.animation = 'slideOut 0.3s ease-in-out forwards';
+                
+                setTimeout(function() {
+                    popupBanner.style.display = 'none';
+                    popupBanner.style.animation = 'fadeIn 0.3s ease-in-out';
+                    body.classList.remove('popup-open');
+                    
+                    // Set timer to show popup again after 1 minute (60000 milliseconds)
+                    popupTimer = setTimeout(showPopup, 60000);
+                }, 250);
+            }
+            
+            // Show popup initially after page load
+            setTimeout(showPopup, 2000); // Show after 2 seconds
+            
+            // Close popup when X button is clicked
+            closePopupBtn.addEventListener('click', hidePopup);
+            
+            // Close popup when clicking outside the banner
+            popupBanner.addEventListener('click', function(e) {
+                if (e.target === popupBanner) {
+                    hidePopup();
+                }
+            });
+            
+            // Redirect when banner is clicked
+popupBannerContent.addEventListener('click', function() {
+    window.location.href = 'coming-soon.html'; // Make sure this file exists
+});
+            
+            // Handle escape key to close popup
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popupBanner.style.display === 'flex') {
+                    hidePopup();
+                }
+            });
+            
+            // Optional: Set localStorage to track popup behavior across sessions
+            function shouldShowPopup() {
+                const lastClosed = localStorage.getItem('popupLastClosed');
+                if (!lastClosed) return true;
+                
+                const now = new Date().getTime();
+                const timeDiff = now - parseInt(lastClosed);
+                // Show popup if it's been more than 1 minute since last close
+                return timeDiff > 60000;
+            }
+            
+            function setPopupClosedTime() {
+                localStorage.setItem('popupLastClosed', new Date().getTime());
+            }
+            
+            // Check if we should show popup based on localStorage
+            if (shouldShowPopup()) {
+                setTimeout(showPopup, 2000);
+            }
+            
+            // Update localStorage when popup is closed
+            closePopupBtn.addEventListener('click', setPopupClosedTime);
+            popupBanner.addEventListener('click', function(e) {
+                if (e.target === popupBanner) {
+                    setPopupClosedTime();
+                }
+            });
+            
+            // Handle image loading for different screen sizes
+            function updateBannerImage() {
+                // You can implement logic here to load different images based on screen size
+                // For example:
+                // if (window.innerWidth < 768) {
+                //     popupBannerContent.style.backgroundImage = "url('assets/img/popup-banner-mobile.jpg')";
+                // } else {
+                //     popupBannerContent.style.backgroundImage = "url('assets/img/popup-banner.jpg')";
+                // }
+            }
+            
+            // Update image on resize
+            window.addEventListener('resize', updateBannerImage);
+            // Initial call
+            updateBannerImage();
+        });
+    </script>
 
     <!-- Custom Popup JS -->
     <script>
