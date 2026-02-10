@@ -1,0 +1,97 @@
+<!-- 1. POPUP OVERLAY (Hidden by default) -->
+<div id="popup-overlay" 
+     class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 popup-transition hidden opacity-0"
+     aria-modal="true" 
+     role="dialog">
+    
+    <!-- 2. POPUP CONTENT BOX -->
+    <div id="popup-content" 
+         class="bg-white rounded-xl shadow-2xl overflow-hidden relative 
+                w-11/12 max-w-xl mx-auto md:w-full 
+                transform scale-95 transition-transform duration-300">
+        
+        <!-- Close Button -->
+        <button id="close-popup" 
+                class="absolute top-4 right-4 z-10 
+                       bg-white text-gray-800 hover:text-red-600 
+                       rounded-full p-2 text-xl font-bold transition duration-200 
+                       shadow-md hover:shadow-lg focus:outline-none" 
+                aria-label="Close Popup">
+            &times;
+        </button>
+
+        <!-- 
+             Redirect Link Wrapper 
+             IMPORTANT: Change the 'href' value to your desired URL!
+        -->
+        <a href="https://www.example.com/your-promotion-link" 
+           target="_blank" 
+           id="banner-link"
+           aria-label="Click to view promotion details">
+            
+            <!-- Image Container (1080x1080 visual design target) -->
+            <div class="aspect-square">
+                <!-- 
+                    !!! IMPORTANT: Replace the placeholder URL below with your actual 1080x1080 image URL.
+                -->
+                <img src="https://placehold.co/1080x1080/0f8a85/ffffff?text=1080x1080+Banner+Placeholder" 
+                     alt="Promotional Banner Image" 
+                     class="w-full h-full object-cover">
+            </div>
+        </a>
+    </div>
+</div>
+
+<script>
+    const overlay = document.getElementById('popup-overlay');
+    const contentBox = document.getElementById('popup-content');
+    const closeButton = document.getElementById('close-popup');
+    const bannerLink = document.getElementById('banner-link'); // Get the new link element
+
+    /**
+     * Closes the popup by hiding the overlay and resetting styles.
+     */
+    function closePopup() {
+        overlay.classList.add('opacity-0');
+        contentBox.classList.remove('scale-100');
+        contentBox.classList.add('scale-95');
+        
+        // Wait for the opacity transition to finish before setting display: none
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+        }, 300); 
+    }
+
+    /**
+     * Opens the popup when the page loads.
+     */
+    function openPopup() {
+        overlay.classList.remove('hidden');
+        
+        // Allow a small delay before applying opacity to trigger the smooth CSS transition
+        setTimeout(() => {
+            overlay.classList.remove('opacity-0');
+            overlay.classList.add('opacity-100');
+            contentBox.classList.remove('scale-95');
+            contentBox.classList.add('scale-100');
+        }, 10);
+    }
+
+    // 1. Trigger the popup when the entire page is loaded
+    window.addEventListener('load', openPopup);
+
+    // 2. Close when the 'X' button is clicked
+    closeButton.addEventListener('click', closePopup);
+
+    // NEW: Close the popup immediately when the banner image is clicked (for cleaner transition)
+    // The browser will handle the redirect because the 'a' tag is present.
+    bannerLink.addEventListener('click', closePopup);
+
+    // 3. Close when the user clicks the dark background (outside the image)
+    overlay.addEventListener('click', (e) => {
+        // Check if the click target is the overlay itself, not a child element like the link
+        if (e.target === overlay) {
+            closePopup();
+        }
+    });
+</script>
