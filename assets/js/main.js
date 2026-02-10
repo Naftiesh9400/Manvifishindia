@@ -1,6 +1,5 @@
 /* ===================================================================
     
-<<<<<<< HEAD
 	Author          : Valid Theme
 	Template Name   : Agrica - Organic Farm Agriculture Template
 	Version         : 1.0
@@ -10,67 +9,35 @@
 	"use strict";
 
 	$(document).ready(function () {
-=======
-    Author          : Valid Theme
-    Template Name   : Agrica - Organic Farm Agriculture Template
-    Version         : 1.0
-    
-* ================================================================= */
-(function($) {
-	"use strict";
-
-	$(document).ready(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Tooltip Init
-=======
-		    # Tooltip Init
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		===============================================*/
 		$('[data-toggle="tooltip"]').tooltip();
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Youtube Video Init
-=======
-		    # Youtube Video Init
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		 ===============================================*/
 		$('.player').mb_YTPlayer();
 
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Scrolla active
-=======
-		    # Scrolla active
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		===============================================*/
 		$('.animate').scrolla();
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# imagesLoaded active
 		===============================================*/
 		$('#gallery-masonary,#shop-masonary').imagesLoaded(function () {
 
 			/* Filter menu */
 			$('.mix-item-menu').on('click', 'button', function () {
-=======
-		    # imagesLoaded active
-		===============================================*/
-		$('#gallery-masonary,#shop-masonary').imagesLoaded(function() {
-
-			/* Filter menu */
-			$('.mix-item-menu').on('click', 'button', function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 				var filterValue = $(this).attr('data-filter');
 				$grid.isotope({
 					filter: filterValue
@@ -78,11 +45,7 @@
 			});
 
 			/* filter menu active class  */
-<<<<<<< HEAD
 			$('.mix-item-menu button').on('click', function (event) {
-=======
-			$('.mix-item-menu button').on('click', function(event) {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 				$(this).siblings('.active').removeClass('active');
 				$(this).addClass('active');
 				event.preventDefault();
@@ -110,28 +73,17 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Fun Factor Init
 		===============================================*/
 		$('.timer').countTo();
 		$('.fun-fact').appear(function () {
-=======
-		    # Fun Factor Init
-		===============================================*/
-		$('.timer').countTo();
-		$('.fun-fact').appear(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 			$('.timer').countTo();
 		}, {
 			accY: -100
 		});
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Magnific popup init
-=======
-		    # Magnific popup init
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		 ===============================================*/
 		$(".popup-link").magnificPopup({
 			type: 'image',
@@ -154,20 +106,12 @@
 			fixedContentPos: false
 		});
 
-<<<<<<< HEAD
 		$('.magnific-mix-gallery').each(function () {
-=======
-		$('.magnific-mix-gallery').each(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 			var $container = $(this);
 			var $imageLinks = $container.find('.item');
 
 			var items = [];
-<<<<<<< HEAD
 			$imageLinks.each(function () {
-=======
-			$imageLinks.each(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 				var $item = $(this);
 				var type = 'image';
 				if ($item.hasClass('magnific-iframe')) {
@@ -191,11 +135,7 @@
 				},
 				type: 'image',
 				callbacks: {
-<<<<<<< HEAD
 					beforeOpen: function () {
-=======
-					beforeOpen: function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 						var index = $imageLinks.index(this.st.el);
 						if (-1 !== index) {
 							this.goTo(index);
@@ -207,17 +147,10 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			_Progressbar Init
 		 ===============================================*/
 		function animateElements() {
 			$('.progressbar').each(function () {
-=======
-		    _Progressbar Init
-		 ===============================================*/
-		function animateElements() {
-			$('.progressbar').each(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 				var elementPos = $(this).offset().top;
 				var topOfWindow = $(window).scrollTop();
 				var percent = $(this).find('.circle').attr('data-percent');
@@ -234,11 +167,7 @@
 						fill: {
 							gradient: ['#49a760', '#49a760']
 						}
-<<<<<<< HEAD
 					}).on('circle-animation-progress', function (event, progress, stepValue) {
-=======
-					}).on('circle-animation-progress', function(event, progress, stepValue) {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 						$(this).find('strong').text((stepValue * 100).toFixed(0) + "%");
 					}).stop();
 				}
@@ -251,13 +180,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Banner Carousel
 		 ===============================================*/
-=======
-            # Banner Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const bannerFade = new Swiper(".banner-fade", {
 			// Optional parameters
 			direction: "horizontal",
@@ -283,24 +207,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-<<<<<<< HEAD
 			el: '.swiper-scrollbar',
 		  },*/
-=======
-            el: '.swiper-scrollbar',
-          },*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		});
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Testimonials Carousel
 		 ===============================================*/
-=======
-            # Testimonials Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const testimonialCarousel = new Swiper(".testimonial-carousel", {
 			// Optional parameters
 			direction: "horizontal",
@@ -313,24 +227,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-<<<<<<< HEAD
 			el: '.swiper-scrollbar',
 		  },*/
-=======
-            el: '.swiper-scrollbar',
-          },*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		});
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Testimonials Carousel
 		 ===============================================*/
-=======
-            # Testimonials Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const testimonialTwoCarousel = new Swiper(".testimonial-style-two-carousel", {
 			// Optional parameters
 			direction: "horizontal",
@@ -347,24 +251,14 @@
 
 			// And if we need scrollbar
 			/*scrollbar: {
-<<<<<<< HEAD
 			el: '.swiper-scrollbar',
 		  },*/
-=======
-            el: '.swiper-scrollbar',
-          },*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		});
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Gallery Style One Carousel
 		 ===============================================*/
-=======
-            # Gallery Style One Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const galleryOne = new Swiper(".gallery-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -389,13 +283,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Service Carousel
 		 ===============================================*/
-=======
-            # Service Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const serviceOneCarousel = new Swiper(".service-style-two-carousel", {
 			// Optional parameters
 			loop: true,
@@ -422,13 +311,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Team Carousel
 		 ===============================================*/
-=======
-            # Team Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const teamCarousel = new Swiper(".team-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -455,13 +339,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Clients Carousel
 		 ===============================================*/
-=======
-            # Clients Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const brandOneCarousel = new Swiper(".brand-style-one-carousel", {
 			// Optional parameters
 			loop: true,
@@ -482,13 +361,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Product Cateogry Carousel
 		 ===============================================*/
-=======
-            # Product Cateogry Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const proCatCarousel = new Swiper(".pro-cat-carousel", {
 			// Optional parameters
 			loop: true,
@@ -517,11 +391,7 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Brand Carousel
-=======
-		    # Brand Carousel
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		 ===============================================*/
 		const brand6col = new Swiper(".brand5col", {
 			// Optional parameters
@@ -547,13 +417,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Product Gallery Carousel
 		 ===============================================*/
-=======
-            # Product Gallery Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const productGallery = new Swiper(".product-gallery-carousel", {
 			// Optional parameters
 			loop: true,
@@ -575,13 +440,8 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			# Related Product Carousel
 		 ===============================================*/
-=======
-            # Related Product Carousel
-         ===============================================*/
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		const relatedProduct = new Swiper(".related-product-carousel", {
 			// Optional parameters
 			loop: true,
@@ -603,16 +463,60 @@
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			Contact Form Handling (FormSubmit)
 		================================================== */
 		/* ==================================================
 			Contact Form Handling (FormSubmit)
 		================================================== */
-		$(document).on('submit', '#contact-page-form, #newsletter-form', function (e) {
+		/* ==================================================
+			Contact Form Handling (FormSubmit)
+		================================================== */
+		$(document).on('submit', '#contact-page-form, #newsletter-form, #vacancy-form', function (e) {
 			e.preventDefault();
 			var form = this;
 			var $form = $(this);
+
+			// --- VALIDATION START ---
+			var isValid = true;
+			var errorMessage = "";
+
+			// 1. Email Validation
+			var emailField = $form.find('input[name="email"]');
+			if (emailField.length > 0) {
+				var email = emailField.val().trim();
+				var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailPattern.test(email)) {
+					isValid = false;
+					errorMessage += "Please enter a valid email address.\n";
+					emailField.addClass('is-invalid'); // Add invalid class for potential CSS styling
+				} else {
+					emailField.removeClass('is-invalid');
+				}
+			}
+
+			// 2. Phone Validation (Only for contact and vacancy forms)
+			var phoneField = $form.find('input[name="phone"]');
+			if (phoneField.length > 0) {
+				var phone = phoneField.val().trim();
+				// Regex for 10-digit mobile number, optional +91
+				var phonePattern = /^(\+91[\-\s]?)?[6-9]\d{9}$/;
+
+				// If the field is not empty, validate it. If required, browser validation usually catches empty first.
+				if (phone && !phonePattern.test(phone)) {
+					isValid = false;
+					errorMessage += "Please enter a valid 10-digit phone number (e.g., 9876543210).\n";
+					phoneField.addClass('is-invalid');
+				} else {
+					phoneField.removeClass('is-invalid');
+				}
+			}
+
+			if (!isValid) {
+				alert(errorMessage);
+				return false; // Stop execution
+			}
+			// --- VALIDATION END ---
+
 			var $btn = $form.find('button[type="submit"]');
 			var originalText = $btn.html();
 
@@ -653,50 +557,11 @@
 			if (e.target === this || $(e.target).hasClass('close-popup')) {
 				$('#success-popup').fadeOut();
 			}
-=======
-		    Contact Form Validations
-		================================================== */
-		$('.contact-form').each(function() {
-			var formInstance = $(this);
-			formInstance.submit(function() {
-
-				var action = $(this).attr('action');
-
-				$("#message").slideUp(750, function() {
-					$('#message').hide();
-
-					$('#submit')
-						.after('<img src="assets/img/ajax-loader.gif" class="loader" />')
-						.attr('disabled', 'disabled');
-
-					$.post(action, {
-							name: $('#name').val(),
-							email: $('#email').val(),
-							phone: $('#phone').val(),
-							comments: $('#comments').val()
-						},
-						function(data) {
-							document.getElementById('message').innerHTML = data;
-							$('#message').slideDown('slow');
-							$('.contact-form img.loader').fadeOut('slow', function() {
-								$(this).remove()
-							});
-							$('#submit').removeAttr('disabled');
-						}
-					);
-				});
-				return false;
-			});
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		});
 
 
 		/* ==================================================
-<<<<<<< HEAD
 			GSAP animation
-=======
-		    GSAP animation
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 		================================================== */
 
 		gsap.set(".animation-shape", {
@@ -717,28 +582,17 @@
 
 
 	/* ==================================================
-<<<<<<< HEAD
 		Preloader Init
 	 ===============================================*/
 	function loader() {
 		$(window).on('load', function () {
-=======
-        Preloader Init
-     ===============================================*/
-	function loader() {
-		$(window).on('load', function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 			$('#agrica-preloader').addClass('loaded');
 			$("#loading").fadeOut(500);
 			// Una vez haya terminado el preloader aparezca el scroll
 
 			if ($('#agrica-preloader').hasClass('loaded')) {
 				// Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
-<<<<<<< HEAD
 				$('#preloader').delay(900).queue(function () {
-=======
-				$('#preloader').delay(900).queue(function() {
->>>>>>> bc7449aeed1bc186326cc6685a791aedc22723b2
 					$(this).remove();
 				});
 			}
