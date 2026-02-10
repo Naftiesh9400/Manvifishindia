@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Manvi - Manvi Fish and Duck Farming India">
+
+    <!-- ========== Page Title ========== -->
+    <title>Manvi - Manvi Fish and Duck Farming India</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/magnific-popup.css" rel="stylesheet">
+    <link href="assets/css/flaticon-set.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+    <link href="assets/css/validnavs.css" rel="stylesheet">
+    <link href="assets/css/helper.css" rel="stylesheet">
+    <link href="assets/css/unit-test.css" rel="stylesheet">
+    <link href="assets/css/shop.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <!-- ========== End Stylesheet ========== -->
+
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Popup Banner Styles -->
+    <style>
+        /* Popup Banner Styles */
+        .popup-banner-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 10003;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in-out;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        .popup-banner-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px; /* Fixed maximum width for all screens */
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: scaleIn 0.3s ease-in-out;
+        }
+        
+        /* Fixed aspect ratio container for the banner */
+        .popup-banner-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%; /* Creates 1:1 aspect ratio (square) */
+            overflow: hidden;
+        }
+        
+        .popup-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets/img/popup-banner.jpg'); /* Replace with your banner image */
+            background-size: cover; /* Ensures image covers the entire area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+        
+        .popup-banner:hover {
+            transform: scale(1.03);
+        }
+        
+        .popup-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            border: 2px solid #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .popup-close-btn:hover {
+            background-color: rgba(255, 0, 0, 0.9);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        /* Banner text overlay (optional) */
+        .banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px 15px 15px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        
+        .banner-text h3 {
+            margin: 0 0 5px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .banner-text p {
+            margin: 0;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: scale(1); opacity: 1; }
+            to { transform: scale(0.85); opacity: 0; }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .popup-banner-overlay {
+                padding: 10px;
+            }
+            
+            .popup-banner-container {
+                max-width: 100%;
+                border-radius: 8px;
+            }
+            
+            .popup-close-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 18px;
+                top: 8px;
+                right: 8px;
+            }
+            
+            .banner-text h3 {
+                font-size: 1.2rem;
+            }
+            
+            .banner-text p {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .popup-banner-container {
+                max-width: 600px; /* Slightly larger on very big screens */
+            }
+        }
+        
+        /* Landscape mode on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .popup-banner-container {
+                max-width: 400px;
+            }
+            
+            .popup-banner-wrapper {
+                padding-bottom: 80%; /* Slightly rectangular for landscape */
+            }
+        }
+        
+        /* Prevent body scroll when popup is open */
+        body.popup-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Popup Banner -->
+    <div class="popup-banner-overlay" id="popupBanner">
+        <div class="popup-banner-container">
+            <div class="popup-close-btn" id="closePopup">×</div>
+            <div class="popup-banner-wrapper">
+                <div class="popup-banner" id="popupBannerContent">
+                    <!-- Optional text overlay -->
+                    <div class="banner-text">
+                        <h3>Special Offer!</h3>
+                        <p>Click to discover our exclusive deals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rest of your existing HTML code remains the same -->
+    <!-- Start Preloader 
+    ============================================= -->
+    <div id="preloader">
+        <div id="Manvi-preloader" class="Manvi-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Start Header Top 
+    ============================================= -->
+    <div class="top-bar-area top-bar-style-one bg-dark text-light">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-8">
+                    <ul class="item-flex">
+                        <li>
+                            <i class="fas fa-clock"></i> Opening Hours : Monday- Saturday, 10:00 am - 06:00pm
+                        </li>
+                        <li>
+                            <a href="tel:+91 8538098093"><i class="fas fa-phone-alt"></i> +91 8538098093</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="social">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top -->
+
+    <!-- Header 
+    ============================================= -->
+    <header>
+        <!-- Start Navigation -->
+        <nav class="navbar mobile-sidenav inc-shape navbar-sticky navbar-default validnavs dark">
+
+            <div class="container d-flex justify-content-between align-items-center">
+                
+                
+                <div class="navbar-brand-left">
+                    <!-- Start Header Navigation -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="index.html">
+                            <img src="assets/img/logo-mix.png" class="logo" alt="Logo">
+                        </a>
+                    </div>
+                    <!-- End Header Navigation -->
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="assets/img/logo.png" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+                    
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="">
+                            <a href="index.html" class="">Home</a>
+                        </li>
+                        <li class="">
+                            <a href="about-us.html" class="">About Us</a>
+                        </li>
+                        
+                        
+                        </li>
+                        <li class="">
+                            
+                            <a href="Board of directors.html" class="">Board Of Director</a>
+                            
+                        </li>
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Fish Farming.html">Fish Farming</a></li>
+                                <li><a href="quail-farming.html">Quail Farming</a></li>
+                                <li><a href="duck-poultry-farming.html">Duck & Poultry Farming</a></li>
+                                <li><a href="egg-production.html">Egg Production</a></li>
+                                <li><a href="feed-production-optimization.html">Feed Production Optimization</a></li>
+                                <li><a href="eco-farming-manure.html">Eco Farming Manure</a></li>
+                                <li><a href="veterinary-health-management.html">Veterinary Health Management</a></li>
+                                <li><a href="education.html">Education Online and Project-Based Approach</a></li>
+                                <li><a href="kadaknath-chicken-rearing.html">Kadaknath Chicken Rearing</a></li>
+                                <li><a href="purchasing-fish-from-farmers.html">Purchasing Fish From Farmers</a></li>
+                                <li><a href="restaurant-business.html">Restaurant Business</a></li>
+                                <li><a href="spices-pulses.html">Spices, Pulses & Gram</a></li>
+                                <li><a href="chilli-onion-garlic.html">Chilli, Onion & Garlic</a></li>
+                                <li><a href="potato-seeds.html">Sale of Potato Seeds</a></li>
+                                <li><a href="pickle-production.html">Pickle Production & Sale</a></li>
+                                <li><a href="earthworm-manure.html">Earthworm Manure</a></li>
+                                <li><a href="milk-work.html">Milk Work</a></li>
+                                <li><a href="animal-husbandry.html">Animal Husbandry</a></li>
+                                <li><a href="fish-egg-solution.html">Fish Egg Solutions</a></li>
+                            
+                            </ul>
+                            <li class="">
+                                <a href="vacancy.html">Vacancy</a>
+                                
+                            </li>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >More</a>
+                            <ul class="dropdown-menu">
+                                <li class="">
+                                    <a href="contact.html" class="">Contact Us</a>
+                                    
+                                <!-- </li>
+                                <li class="">
+                                    
+                                    <a href="#" class="">Blog</a> -->
+                                        
+                        </li>
+                        <li class="">
+                            <li class="active"><a href="hr.html">HR Policy</a></li>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <div class="attr-right">
+                    <!-- Start Atribute Navigation -->
+                    <div class="attr-nav">
+                        <ul>
+                            
+                            <!-- <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                                    <i class="far fa-shopping-cart"></i>
+                                    <span class="badge">3</span>
+                                </a>
+                                <ul class="dropdown-menu cart-list"> -->
+                                    <!-- <li>
+                                        <div class="thumb">
+                                            <a href="#" class="photo">
+                                                <img src="assets/img/products/1.png" alt="Thumb">
+                                            </a>
+                                            <a href="#" class="remove-product">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <h6><a href="#">Delica omtantur </a></h6>
+                                            <p>2x - <span class="price">$99.99</span></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="#" class="photo">
+                                                <img src="assets/img/products/2.png" alt="Thumb">
+                                            </a>
+                                            <a href="#" class="remove-product">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <h6><a href="#">Omnes ocurreret</a></h6>
+                                            <p>1x - <span class="price">$33.33</span></p>
+                                        </div>
+                                    </li>
+                                    <li class="total">
+                                        <span class="pull-right"><strong>Total</strong>: $0.00</span>
+                                        <a href="#" class="btn btn-default btn-cart">Cart</a>
+                                        <a href="#" class="btn btn-default btn-cart">Checkout</a>
+                                    </li> -->
+                                </ul>
+                            </li>
+                            <li class="button"><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <!-- End Atribute Navigation -->
+
+                </div>
+
+                <!-- Main Nav -->
+            </div>   
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Banner Area 
+    ============================================= -->
+    <div class="banner-area navigation-circle text-light banner-style-one zoom-effect overflow-hidden">
+        <!-- Slider main container -->
+        <div class="banner-fade">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+
+                <!-- Single Item
+                <div class="swiper-slide banner-style-one">
+                    <div class="banner-thumb bg-cover shadow dark" style="background: url(assets/img/2440x1578.png);"></div>
+                    <div class="shape">
+                        <img src="assets/img/shape/2.png" alt="Image Not Found">
+                    </div>
+                    <div class="container">
+                        <div class="row align-center">
+                            <div class="col-xl-9">
+                                <div class="content">
+                                    <div class="badge">
+                                        <div class="curve-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" version="1.1">
+                                                <path id="textPath" d="M 0,75 a 75,75 0 1,1 0,1 z"></path>
+                                                <text><textPath href="#textPath">100% Organic Product</textPath></text>
+                                            </svg>
+                                            <a href="https://www.youtube.com/watch?v=ipUuoMCEbDQ" class="popup-youtube"><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    <div class="info">
+                                        <h1>EMPOWERING RURAL INDIA THROUGH SUSTAINABLE FISH AND DUCK FARMING</h1>
+                                        <p>
+                                            Dissuade ecstatic and properly saw entirely sir why laughter endeavor. In on my jointure horrible margaret suitable.
+                                        </p>
+                                        <div class="button">
+                                            <a class="btn btn-theme btn-md radius animation" href="about-us.html">Discover More</a>
+                                        </div>
+                                        <div class="button">
+                                            <a class="btn btn-theme btn-md radius animation" href="about-us.html">Discover More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                End Single Item -->
+
+                <!-- Single Item -->
+                <div class="swiper-slide banner-style-one">
+                    <div class="banner-thumb bg-cover shadow dark" style="background: url(assets/img/2440x1578.png);"></div>
+                    <div class="shape">
+                        <img src="assets/img/shape/2.png" alt="Image Not Found">
+                    </div>
+                    <div class="container">
+                        <div class="row align-center">
+                            <div class="col-xl-9">
+                                <div class="content">
+                                    <div class="badge">
+                                        <div class="curve-text">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" version="1.1">
+                                                <path id="textPath" d="M 0,75 a 75,75 0 1,1 0,1 z"></path>
+                                                <text><textPath href="#textPath">100% Organic Product</textPath></text>
+                                            </svg>
+                                            <a href="" class=""><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="info">
+                                        <h1>OUR AIM IS TO EMPOWER RURAL INDIA THROUGH FISH, POULTRY AND DUCK FARMING </h1>
+                                        <p>
+                                            Innovation in Agriculture, Support to Farmers, Preserve Nature.
+                                        </p>
+                                        <div class="button">
+                                            <a class="btn btn-theme btn-md radius animation" href="about-us.html">Discover More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+
+            </div>
+
+            <!-- Navigation -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+        </div>        
+    </div>
+    <!-- End Banner -->
+
+    <!-- Start About 
+    ============================================= -->
+    <div class="about-style-one-area default-padding overflow-hidden">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-xl-6 col-lg-5">
+                    <div class="about-style-one-thumb">
+                        <img src="assets/img/800x1000.png" alt="Image Not Found">
+                        <div class="animation-shape">
+                            <img src="assets/img/illustration/1.png" alt="Image Not Found">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-6 offset-lg-1">
+                    <div class="about-style-one-info">
+                        
+                        <h2 class="title">WE PROVIDE BEST SERVICES IN FISH, POULTRY, DUCK FARMING AND AGRICULTURE </h2>
+                        <p>
+                            The agriculture sector of India is very vast which mainly includes agriculture, fisheries, poultry, duck farming and animal husbandry which play a vital role in the upliftment of the farmer and boosting the agriculture sector.Apart from this, it also makes a significant contribution in promoting local practices in the Indian agriculture sector.Fish farming in particular helps conserve water, create employment for rural communities, and thrive in a diverse environment.Chickens and ducks are resilient and adaptable, making them a profitable option for commercial farming.By integrating innovative technologies with traditional methods, fish, poultry, duck and agriculture make significant contributions to business and industry and offer unique opportunities for growth and sustainability.
+                        </p>
+                        <!-- <div class="fun-fact-style-flex mt-35">
+                            <div class="counter">
+                                <div class="timer" data-to="25" data-speed="2000">25</div>
+                                <div class="operator">M</div>
+                            </div>
+                            <span class="medium">Growth Tonns <br> of Harvest</span>
+                        </div> -->
+                        <ul class="top-feature">
+                            <li>
+                                <div class="icon">
+                                    <img src="assets/img/icon/3.png" alt="Image Not Found">
+                                </div>
+                                <div class="info">
+                                    <h4>100% Guaranteed Organic Fish</h4>
+                                    <p>
+                                        Always parties but trying she shewing of moment.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <img src="assets\img\illustration\2.png" alt="Image Not Found">
+                                </div>
+                                <div class="info">
+                                    <h4>Top-Quality Healthy Fish Production</h4>
+                                    <p>
+                                        Majority have suffered alteration in some form by injected humor.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Start Services 
+    ============================================= -->
+    <div class="services-style-one-area bg-gray default-padding bottom-less">
+        <div class="shape-right-top" style="background-image: url(assets/img/shape/9.png);"></div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="site-heading text-center">
+                        <h5 class="sub-title">Our Services</h5>
+                        <h2 class="title">Currently we are <br> selling organic Fishes</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Single Item -->
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/illustration/2.png" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">SOLO &<span>Team Fishing</span></a></h4>
+                            </div>
+                            <p>
+                                Manvi Fish and Duck Farming India Pvt. Ltd. has experienced personalized solo and team fishing services, perfect for adventure and relaxation seekers.
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/illustration/3.png" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">Fishing  <span>Competitions</span></a></h4>
+                            </div>
+                            <p>
+                                Manvi Fish and Duck Farming India Pvt. Ltd. company will include fishing competitions in its future exciting events, where participants can showcase their skills and win prizes.
+
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/1 (4).jpg" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">Fishing  <span>Guidence</span></a></h4>
+                            </div>
+                            <p>
+                                Manvi Fish and Duck Farming India Limited Company provides you expert guidance on fishing so that you can enhance your skills and techniques.
+ 
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/1 (3).jpg" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">Fishing  <span>Tour </span></a></h4>
+                            </div>
+                            <p>
+                               Join our exciting fishing trip at Manvi Fish and Duck Farming India Pvt. Ltd. Company, where adventure and nature awaits fishing enthusiasts.
+  
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/1 (2).jpg" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">Fishing  <span>boats </span></a></h4>
+                            </div>
+                            <p>
+                                Manvi Fish and Duck Farming India Pvt. Ltd. company is committed to providing well-equipped fishing boats for your adventures on the water.
+
+  
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 service-one-single">
+                    <div class="service-style-one-item">
+                        <div class="thumb">
+                            <img src="assets/img/1 (1).jpg" alt="Image Not Found">
+                        </div>
+                        <div class="info">
+                            <div class="top">
+                                <h4><a href="#">Fishing  <span>Equipments </span></a></h4>
+                            </div>
+                            <p>
+                                Manvi Fish and Duck Farming India Pvt. Ltd. Company provides high quality fishing equipment to improve fishing experience and success.
+  
+                            </p>
+                            <!-- <a href="#" class="btn-angle"><i class="fas fa-arrow-right"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Single Item -->
+            </div>
+        </div>
+    </div>
+    <!-- End Services -->
+    
+
+    <!-- Start Benifits 
+    ============================================= -->
+    <div class="benifits-area default-padding-top video-bg-live bg-cover mt--50 mt-md-0 mt-xs-0" style="background-image: url(assets/img/2440x1578.png);">
+        <!-- <div class="player" data-property="{videoURL:'w9eRIGTHKJM',containment:'.video-bg-live', showControls:false, autoPlay:true, zoom:0, loop:true, mute:true, startAt:13, opacity:1, quality:'default'}"></div> -->
+        <div class="shape-top-center" style="background-image: url(assets/img/shape/10.png);"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-7">
+                    <div class="benifit-items text-light">
+                        <div class="shape">
+                            <img src="assets/img/illustration/8.png" alt="Image Not Found">
+                        </div>
+                        <h2 class="title">VISION AND MISSION</h2>
+                        <h4 class="title">Vision</h4>
+                        <p>
+                            Our goal is to foster lasting customer satisfaction and loyalty by providing seamless social, technological, and creative solutions.We take a collaborative approach to each project, ensuring an ideal solution that inspires trust and excellence.
+                        </p>
+                        <!-- <ul class="list-standard">
+                            <li>Modern Agriculture Equipment</li>
+                            <li>Awesome Harvest of Wheat</li>
+                            <li>Fresh Fruits & Vegetables</li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Benifits -->
+
+    <!-- Start Product 
+    ============================================= -->
+    <div class="product-cat-area default-padding">
+        <div class="shape-right-bottom-mini">
+            <img src="assets/img/shape/11.png" alt="Image Not Found">
+        </div>
+        <div class="container">
+            <div class="product-cat-items">
+                <div class="row align-center">
+                    <div class="col-lg-5 product-cat-info">
+                        <h2 class="mask-text" style="background-image: url(assets/img/shape/28.jpg);">Healthy Life With Fresh Products</h2>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <div class="product-cat-lists text-light">
+                            <div class="row">
+                                <!-- <div class="col-xl-6 col-lg-7">
+                                    <div class="benifit-items text-light"> -->
+                            </div>
+                            
+                            <h4 class="title">Mission</h4>
+                            <p>
+                                Our mission is to become India's leading fisheries, poultry, duck farming and agricultural farming enterprise by consistently exceeding customer expectations.through innovative ideas, sustainable practices and exceptional service delivery, we aim to set new standards in the industry and empower communities.
+
+                            </p>
+                            
+                        </div>
+                                <!-- End Single Item -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Cat -->
+
+    <!-- Start Testimonial 
+    ============================================= -->
+    <div class="testimonial-area default-padding bg-gray" style="background-image: url(assets/img/shape/13.png);">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="testimonial-heading">
+                        <h2>Tetsimonials</h2>
+                    </div>
+                    <div class="testimonial-carousel testimonial-style-one swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Single item -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-style-one">
+                                    <div class="thumb">
+                                        <img src="assets/img/800x800.png" alt="Imge Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <img src="assets/img/shape/quote-big.png" alt="Image Not Found">
+                                        <p>
+                                            “Targeting consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week.”
+                                        </p>
+                                        <div class="provider">
+                                            <div class="content">
+                                                <h4>Matthew J. Wyman</h4>
+                                                <span>Senior Consultant</span>
+                                            </div>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single item -->
+                            <!-- Single item -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-style-one">
+                                    <div class="thumb">
+                                        <img src="assets/img/800x800.png" alt="Imge Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <img src="assets/img/shape/quote-big.png" alt="Image Not Found">
+                                        <p>
+                                            “Consultation discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits.”
+                                        </p>
+                                        <div class="provider">
+                                            <div class="content">
+                                                <h4>Anthom Bu Spar</h4>
+                                                <span>Marketing Manager</span>
+                                            </div>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single item -->
+                            <!-- Single item -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-style-one">
+                                    <div class="thumb">
+                                        <img src="assets/img/800x800.png" alt="Imge Not Found">
+                                    </div>
+                                    <div class="info">
+                                        <img src="assets/img/shape/quote-big.png" alt="Image Not Found">
+                                        <p>
+                                            “Business discover apartments. ndulgence off under folly death wrote cause her way spite. Plan upon yet way get cold spot its week. Almost do am or limits hearts.”
+                                        </p>
+                                        <div class="provider">
+                                            <div class="content">
+                                                <h4>Metho k. Partho</h4>
+                                                <span>Senior Developer</span>
+                                            </div>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single item -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Testimonial -->
+
+    <!-- Start Gallery 
+    ============================================= -->
+    <div class="gallery-style-one-area default-padding">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="site-heading text-center">
+                        <h5 class="sub-title">Awesome Gallery</h5>
+                        <h5 class="title">DIVE INTO OUR FISHERMEN'S PARADISE PHOTO COLLECTION</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fill">
+            <div class="row">
+                <div class="gallery-style-one-carousel swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+
+                        <!-- Single Item -->
+                        <div class="swiper-slide">
+                            <div class="gallery-style-one">
+                                <img src="assets/img/animal-husbandry.png" alt="Image not Found">
+                                <div class="overlay">
+                                    <p>Animal</p>
+                                    <h4><a href="project-details.html">Animal Husbandry</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="swiper-slide">
+                            <div class="gallery-style-one">
+                                <img src="assets/img/chilli-onion-garlic.png" alt="Image not Found">
+                                <div class="overlay">
+                                    <p>Chilli Onion Garlic</p>
+                                    <h4><a href="project-details.html">Chilli Onion Garlic</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="swiper-slide">
+                            <div class="gallery-style-one">
+                                <img src="assets/img/earthworm-manure.png" alt="Image not Found">
+                                <div class="overlay">
+                                    <p>Earthworm</p>
+                                    <h4><a href="project-details.html">Earthworm Manure</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="swiper-slide">
+                            <div class="gallery-style-one">
+                                <img src="assets/img/egg.png" alt="Image not Found">
+                                <div class="overlay">
+                                    <p>Egg</p>
+                                    <h4><a href="project-details.html">Egg Farming</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+                        <!-- Single Item -->
+                        <div class="swiper-slide">
+                            <div class="gallery-style-one">
+                                <img src="assets/img/eco farming.png" alt="Image not Found">
+                                <div class="overlay">
+                                    <p>Eco Farming</p>
+                                    <h4><a href="project-details.html">Eco Farming</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Single Item -->
+
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Gallery  -->
+
+    <!-- Start Choose Us Area
+    ============================================= -->
+    <div class="choose-us-style-one-area default-padding-bottom">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="choose-us-thumb">
+                        <img src="assets/img/illustration/9.png" alt="Image Not Found">
+                    </div>
+                </div>
+                <div class="col-xl-6 offset-xl-1 col-lg-7">
+                    <div class="achivement-items">
+                        <ul class="list-details">
+                            <li>
+                                <h4>Pure & Organic</h4>
+                                <p>
+                                    Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.
+                                </p>
+                            </li>
+                            <li>
+                                <h4>Always Fresh</h4>
+                                <p>
+                                    Continued at up to zealously necessary breakfast. Surrounded sir motionless she end literature. Gay direction neglected but supported yet her.
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="achivement-content">
+                            <div class="item">
+                                <div class="progressbar">
+                                    <div class="circle" data-percent="83">
+                                        <strong></strong>
+                                    </div>
+                                </div>
+                                <h4>Organic Solutions</h4>
+                            </div>
+                            <div class="item">
+                                <div class="progressbar">
+                                    <div class="circle" data-percent="60">
+                                        <strong></strong>
+                                    </div>
+                                </div>
+                                <h4>Quality Agriculture</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Choose Us -->
+
+    <!-- Start Contact Us 
+    ============================================= -->
+    <div class="contact-area overflow-hidden bg-gray default-padding">
+        <div class="sahpe-right-bottom">
+            <img src="assets/img/shape/16.png" alt="Image Not Found">
+        </div>
+        <div class="container">
+            <div class="row align-center">
+                
+                <div class="col-tact-stye-one col-xl-6 col-lg-7">
+                    <div class="contact-form-style-one mb-md-50">
+                        <img src="assets/img/illustration/10.png" alt="Image Not Found">
+                        <h5 class="sub-title">Have Questions?</h5>
+                        <h2 class="heading">Send us a massage</h2>
+                        <form id="home-contact-form" action="https://formsubmit.co/manvifishindia@gmail.com" method="POST" class="contact-form contact-form">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="email" name="email" placeholder="Email*" type="email" required>
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <input class="form-control" id="phone" name="phone" placeholder="Phone" type="text">
+                                        <span class="alert-error"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group comments">
+                                        <textarea class="form-control" id="comments" name="comments" placeholder="Tell Us About Project *" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <button type="submit" name="submit" id="submit">
+                                        <i class="fa fa-paper-plane"></i> Get in Touch
+                                    </button>
+                                </div>
+                            </div>
+                             <!-- FormSubmit Hidden Fields -->
+                            <input type="hidden" name="_subject" value="New Submission from Home Page!">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="basic">
+                            <input type="hidden" name="_autoresponse" value="Thank you for contacting Manvi Fish and Duck Farming! We have received your message and will get back to you shortly.">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-tact-stye-one col-xl-5 offset-xl-1 col-lg-5">
+                    <div class="contact-style-one-info text-light">
+                        <h2>
+                            Contact 
+                            <span>
+                                Information
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M14.4,111.6c0,0,202.9-33.7,471.2,0c0,0-194-8.9-397.3,24.7c0,0,141.9-5.9,309.2,0" style="animation-play-state: running;"></path></svg>
+                            </span>
+                        </h2>
+                        <p>
+                            Plans are in progress, but we’re currently experiencing a cold spot this week. We're working hard to push through and resolve any delays. Please contact us for further details.
+                        </p>
+                        <ul>
+                            <li>
+                                <div class="content">
+                                    <h5 class="title">Phone No.</h5>
+                                    <a href="">+91 8538098093</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="info">
+                                    <h5 class="title">Our Location</h5>
+                                    <p>
+                                        Kankari Pancharul Udaynarayanpur Howrah  <br> West Bengal-711225, India
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="info">
+                                    <h5 class="title">Email</h5>
+                                    <a href="mailto:manvifishindia@gmail.com">manvifishindia@gmail.com</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Start Blog 
+    ============================================= -->
+    <!-- <div class="blog-area home-blog default-padding bottom-less">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="site-heading text-center">
+                        <h5 class="sub-title">Latest News</h5>
+                        <h2 class="title">Check out our blog posts </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row"> -->
+                <!-- Single Item -->
+                <!-- <div class="col-xl-6 col-md-12 mb-30">
+                    <div class="blog-style-one">
+                        <div class="thumb">
+                            <img src="assets/img/800x600.png" alt="Image Not Found">
+                            <div class="overlay text-light">
+                                <h3 class="post-title"><a href="blog-single-with-sidebar.html">Miscovery incommode earnestly commanded if.</a></h3>
+                                <p>
+                                    Seeing rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son themselves.
+                                </p>
+                                <a href="blog-single-with-sidebar.html" class="button-regular">
+                                    Continue Reading <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <!-- <div class="col-xl-3 col-md-6 mb-30">
+                    <div class="blog-style-one">
+                        <div class="thumb">
+                            <a href="blog-single-with-sidebar.html"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
+                            <div class="date"><strong>26</strong> <span>Aug, 2023</span></div>
+                        </div>
+                        <div class="info">
+                            <div class="meta">
+                                <ul>
+                                    <li>
+                                        <a href="#">Md Sohag</a>
+                                    </li>
+                                    <li>
+                                        25 April, 2023
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="post-title"><a href="blog-single-with-sidebar.html">Expression acceptance imprudence particular</a></h3>
+                            <a href="blog-single-with-sidebar.html" class="button-regular">
+                                Continue Reading <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <!-- <div class="col-xl-3 col-md-6 mb-30">
+                    <div class="blog-style-one">
+                        <div class="thumb">
+                            <a href="blog-single-with-sidebar.html"><img src="assets/img/800x600.png" alt="Image Not Found"></a>
+                            <div class="date"><strong>08</strong> <span>Dec, 2023</span></div>
+                        </div>
+                        <div class="info">
+                            <div class="meta">
+                                <ul>
+                                    <li>
+                                        <a href="#">Md Sohag</a>
+                                    </li>
+                                    <li>
+                                        25 April, 2023
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="post-title"><a href="blog-single-with-sidebar.html">Considered imprudence of technical friendship.</a></h3>
+                            <a href="blog-single-with-sidebar.html" class="button-regular">
+                                Continue Reading <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- End Single Item -->
+            <!-- </div>
+        </div>
+    </div> -->
+    <!-- End Blog -->
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="bg-dark text-light" style="background-image: url(assets/img/shape/8.png);">
+        <div class="container">
+            <div class="f-items default-padding">
+                <div class="row">
+                    
+                    <!-- Single Itme -->
+                    <div class="col-lg-4 col-md-6 item">
+                        <div class="footer-item about">
+                            <img class="logo" src="assets\img\logo-icon-light.png" alt="Logo">
+                            <p>
+                                Manvi Fish and Duck Farming India 
+                            </p>
+                            <form id="newsletter-form" action="https://formsubmit.co/manvifishindia@gmail.com" method="POST">
+                                <input type="email" placeholder="Your Email" class="form-control" name="email" required>
+                                <button type="submit"> Go</button>
+                                <!-- FormSubmit Hidden Fields for Newsletter -->
+                                <input type="hidden" name="_subject" value="New Newsletter Subscription!">
+                                <input type="hidden" name="_captcha" value="false">
+                                <input type="hidden" name="_autoresponse" value="Thank you for subscribing to the Manvi Fish and Duck Farming newsletter!">
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Single Itme -->
+
+                    <!-- Single Itme -->
+                    <div class="col-lg-2 col-md-6 item">
+                        <div class="footer-item link">
+                            <h4 class="widget-title">Explore</h4>
+                            <ul>
+                                <li>
+                                    <a href="about-us.html">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="vacancy.html">Vacancy</a>
+                                </li>
+                                <!-- <li>
+                                    <a href="blog-single-with-sidebar.html">News & Media</a>
+                                </li> -->
+                                <!-- <li>
+                                    <a href="services.html">Services</a>
+                                </li> -->
+                                <li>
+                                    <a href="contact.html">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="Board of directors.html">Board Of Directors</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <!-- End Single Itme -->
+
+                    <!-- Single Itme -->
+                         <div class="col-lg-3 col-md-6 item">
+                            <div class="footer-item recent-post">
+                                <h4 class="widget-title">Recent Posts</h4>
+                                <ul>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="blog-single-with-sidebar.html">
+                                                <img src="assets/img/800x800.png" alt="Thumb">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="meta-title">
+                                                <span class="post-date">4 January 2025</span>
+                                            </div>
+                                            <h5><a href="404.html">Community Engagement And Events </a></h5>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <a href="blog-single-with-sidebar.html">
+                                                <img src="assets/img/800x800.png" alt="Thumb">
+                                            </a>
+                                        </div>
+                                        <div class="info">
+                                            <div class="meta-title">
+                                                <span class="post-date">4 January 2025</span>
+                                            </div>
+                                            <h5><a href="404.html">Water Conservation Strategies </a></h5>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <!-- End Single Itme -->
+
+                    <!-- Single Itme -->
+                    <div class="col-lg-3 col-md-6 item">
+                        <div class="footer-item contact">
+                            <h4 class="widget-title">Contact Info</h4>
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div class="content">
+                                        <strong>Address:</strong>
+                                        Kankari Pancharul Udaynarayanpur Howrah West Bengal-711225, India
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="content">
+                                        <strong>Email:</strong>
+                                        <a href="mailto:manvifishindia@gmail.com">manvifishindia@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="content">
+                                        <strong>Phone:</strong>
+                                        <a href="tel:+91 8538098093">+91 8538098093</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Single Itme -->
+                    
+                </div>
+            </div>
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom text-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>&copy; Copyright 2025. Manvi Fish and Duck Farming India Pvt Ltd - All Rights Reserved <a href="#"></a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer Bottom -->
+        </div>
+        <div class="shape-right-bottom">
+            <img src="assets/img/shape/7.png" alt="Image Not Found">
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Success Popup Modal -->
+    <div id="success-popup" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+        <div style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 400px; text-align: center; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);">
+            <span class="close-popup" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2>Success!</h2>
+            <p>Your message has been sent successfully.</p>
+        </div>
+    </div>
+    
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/circle-progress.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/magnific-popup.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/jquery.scrolla.min.js"></script>
+    <script src="assets/js/ScrollOnReveal.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/validnavs.js"></script>
+    <script src="assets/js/gsap.js"></script>
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <script src="assets/js/SplitText.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Popup Banner Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get popup elements
+            const popupBanner = document.getElementById('popupBanner');
+            const closePopupBtn = document.getElementById('closePopup');
+            const popupBannerContent = document.getElementById('popupBannerContent');
+            const body = document.body;
+            
+            // Timer for reappearing after 1 minute
+            let popupTimer = null;
+            
+            // Function to show popup
+            function showPopup() {
+                popupBanner.style.display = 'flex';
+                body.classList.add('popup-open');
+                // Clear any existing timer
+                if (popupTimer) {
+                    clearTimeout(popupTimer);
+                    popupTimer = null;
+                }
+            }
+            
+            // Function to hide popup and set timer to show again after 1 minute
+            function hidePopup() {
+                // Add closing animation
+                popupBanner.style.animation = 'slideOut 0.3s ease-in-out forwards';
+                
+                setTimeout(function() {
+                    popupBanner.style.display = 'none';
+                    popupBanner.style.animation = 'fadeIn 0.3s ease-in-out';
+                    body.classList.remove('popup-open');
+                    
+                    // Set timer to show popup again after 1 minute (60000 milliseconds)
+                    popupTimer = setTimeout(showPopup, 60000);
+                }, 250);
+            }
+            
+            // Show popup initially after page load
+            setTimeout(showPopup, 2000); // Show after 2 seconds
+            
+            // Close popup when X button is clicked
+            closePopupBtn.addEventListener('click', hidePopup);
+            
+            // Close popup when clicking outside the banner
+            popupBanner.addEventListener('click', function(e) {
+                if (e.target === popupBanner) {
+                    hidePopup();
+                }
+            });
+            
+            // Redirect when banner is clicked
+popupBannerContent.addEventListener('click', function() {
+    window.location.href = 'coming-soon.html'; // Make sure this file exists
+});
+            
+            // Handle escape key to close popup
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popupBanner.style.display === 'flex') {
+                    hidePopup();
+                }
+            });
+            
+            // Optional: Set localStorage to track popup behavior across sessions
+            function shouldShowPopup() {
+                const lastClosed = localStorage.getItem('popupLastClosed');
+                if (!lastClosed) return true;
+                
+                const now = new Date().getTime();
+                const timeDiff = now - parseInt(lastClosed);
+                // Show popup if it's been more than 1 minute since last close
+                return timeDiff > 60000;
+            }
+            
+            function setPopupClosedTime() {
+                localStorage.setItem('popupLastClosed', new Date().getTime());
+            }
+            
+            // Check if we should show popup based on localStorage
+            if (shouldShowPopup()) {
+                setTimeout(showPopup, 2000);
+            }
+            
+            // Update localStorage when popup is closed
+            closePopupBtn.addEventListener('click', setPopupClosedTime);
+            popupBanner.addEventListener('click', function(e) {
+                if (e.target === popupBanner) {
+                    setPopupClosedTime();
+                }
+            });
+            
+            // Handle image loading for different screen sizes
+            function updateBannerImage() {
+                // You can implement logic here to load different images based on screen size
+                // For example:
+                // if (window.innerWidth < 768) {
+                //     popupBannerContent.style.backgroundImage = "url('assets/img/popup-banner-mobile.jpg')";
+                // } else {
+                //     popupBannerContent.style.backgroundImage = "url('assets/img/popup-banner.jpg')";
+                // }
+            }
+            
+            // Update image on resize
+            window.addEventListener('resize', updateBannerImage);
+            // Initial call
+            updateBannerImage();
+        });
+    </script>
+
+    <!-- Custom Popup JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeContactForm = document.querySelector('#home-contact-form');
+            const newsletterForm = document.querySelector('#newsletter-form');
+            const successPopup = document.getElementById('success-popup');
+            const closePopupButton = document.querySelector('.close-popup');
+            const popupMessage = successPopup.querySelector('p');
+
+            function handleFormSubmit(formElement, successMessage) {
+                const formData = new FormData(formElement);
+                const submitButton = formElement.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<i class="fa fa-spinner fa-spin"></i>';
+
+                fetch(formElement.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .catch(error => {
+                    console.warn('Fetch error:', error);
+                })
+                .finally(() => {
+                    popupMessage.textContent = successMessage;
+                    successPopup.style.display = 'block';
+                    formElement.reset();
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalButtonText;
+                });
+            }
+
+            if (homeContactForm) {
+                homeContactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    handleFormSubmit(this, 'Your message has been sent successfully.');
+                });
+            }
+
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    handleFormSubmit(this, 'Thank you for subscribing!');
+                });
+            }
+
+            const closePopup = () => {
+                successPopup.style.display = 'none';
+            };
+
+            if (closePopupButton) {
+                closePopupButton.addEventListener('click', closePopup);
+            }
+            window.addEventListener('click', function(event) {
+                if (event.target == successPopup) {
+                    closePopup();
+                }
+            });
+        });
+    </script>
+
+</body>
+<style>
+    /* CHAT WIDGET STYLES */
+    .chat-fab { 
+        position: fixed; 
+        bottom: 30px; 
+        right: 30px; 
+        width: 65px; 
+        height: 65px; 
+        background-color: #A37EF2; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        color: white; 
+        font-size: 30px; 
+        cursor: pointer; 
+        box-shadow: 0 4px 15px rgba(163, 126, 242, 0.4); 
+        z-index: 10001; 
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; 
+    }
+
+    .chat-fab:hover { 
+        transform: scale(1.1); 
+        box-shadow: 0 6px 20px rgba(163, 126, 242, 0.6); 
+    }
+
+    .chat-popup { 
+        display: none; 
+        position: fixed; 
+        bottom: 110px; 
+        right: 30px; 
+        width: 360px; 
+        max-height: 75vh; 
+        background-color: #fff; 
+        border-radius: 20px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        flex-direction: column; 
+        overflow: hidden; 
+        z-index: 10002; 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.95); 
+        transition: opacity 0.3s ease, transform 0.3s ease; 
+    }
+
+    .chat-popup.active { 
+        display: flex; 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+
+    .chat-header { 
+        background-color: #F3EEFF; 
+        color: #333; 
+        padding: 20px; 
+        text-align: center; 
+        border-bottom: 1px solid #EAEAEA; 
+        position: relative; 
+    }
+
+    .chat-header h3 { 
+        margin: 0; 
+        font-size: 1.25rem; 
+        font-weight: 600; 
+    }
+
+    .chat-header .close-btn { 
+        position: absolute; 
+        top: 50%; 
+        right: 20px; 
+        transform: translateY(-50%); 
+        font-size: 20px; 
+        cursor: pointer; 
+        color: #888; 
+    }
+
+    .chat-header .subtitle { 
+        font-size: 0.85rem; 
+        color: #777; 
+        margin-top: 5px; 
+    }
+
+    .chat-body { 
+        flex-grow: 1; 
+        padding: 20px; 
+        overflow-y: auto; 
+        background-color: #fff; 
+    }
+
+    .chat-message { 
+        margin-bottom: 15px; 
+        display: flex; 
+        flex-direction: column; 
+    }
+
+    .chat-message .bubble { 
+        padding: 12px 18px; 
+        border-radius: 20px; 
+        max-width: 85%; 
+        word-wrap: break-word; 
+        line-height: 1.5; 
+    }
+
+    .chat-message .timestamp { 
+        font-size: 0.75rem; 
+        color: #aaa; 
+        margin-top: 6px; 
+    }
+
+    .bot-message { 
+        align-items: flex-start; 
+    }
+
+    .bot-message .bubble { 
+        background-color: #F1F1F5; 
+        color: #333; 
+        border-bottom-left-radius: 5px; 
+    }
+
+    .bot-message .timestamp { 
+        align-self: flex-start; 
+    }
+
+    .user-message { 
+        align-items: flex-end; 
+    }
+
+    .user-message .bubble { 
+        background-color: #A37EF2; 
+        color: white; 
+        border-bottom-right-radius: 5px; 
+    }
+
+    .user-message .timestamp { 
+        align-self: flex-end; 
+    }
+
+    .chat-footer { 
+        display: flex; 
+        padding: 15px; 
+        border-top: 1px solid #EAEAEA; 
+        background-color: #fff; 
+    }
+
+    .chat-footer input { 
+        flex-grow: 1; 
+        border: 1px solid #EAEAEA; 
+        background-color: #F9F9F9; 
+        border-radius: 25px; 
+        padding: 12px 20px; 
+        margin-right: 10px; 
+        transition: border-color 0.3s ease;
+    }
+
+    .chat-footer input:focus { 
+        outline: none; 
+        border-color: #A37EF2; 
+        background-color: #fff; 
+    }
+
+    .chat-footer button { 
+        background: linear-gradient(45deg, #A37EF2, #C49FFF); 
+        color: white; 
+        border: none; 
+        border-radius: 50%; 
+        width: 48px; 
+        height: 48px; 
+        font-size: 20px; 
+        cursor: pointer; 
+        flex-shrink: 0; 
+        box-shadow: 0 2px 8px rgba(163, 126, 242, 0.4);
+        transition: transform 0.2s ease;
+    }
+    .chat-footer button:hover {
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="chat-fab" id="chat-fab">
+    <i class="fas fa-comment-dots"></i>
+</div>
+
+<div class="chat-popup" id="chat-popup">
+    <div class="chat-header">
+        <span class="close-btn" id="close-chat">&times;</span>
+        <h3>Contact Us</h3>
+        <p class="subtitle">We'll respond as soon as we can.</p>
+    </div>
+    <div class="chat-body" id="chat-body">
+        </div>
+    <div class="chat-footer">
+        <form id="chat-form" action="https://formsubmit.co/manvifishindia@gmail.com" method="POST" style="display: flex; width: 100%;">
+            <input type="hidden" name="_subject" value="New Chat Message from Website!">
+            <input type="hidden" name="name" id="chat-name">
+            <input type="hidden" name="email" id="chat-email">
+            <input type="hidden" name="phone" id="chat-phone">
+            
+            <input type="hidden" name="_next" value="REPLACE_WITH_YOUR_PAGE_URL">
+            <input type="hidden" name="_captcha" value="false">
+            
+            <input type="text" id="chat-input" name="message" placeholder="Type a message..." required>
+            <button type="submit" id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatFab = document.getElementById('chat-fab');
+        const chatPopup = document.getElementById('chat-popup');
+        const closeChat = document.getElementById('close-chat');
+        const chatBody = document.getElementById('chat-body');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatForm = document.getElementById('chat-form');
+
+        // NEW: Set the _next field to the current page URL
+        const nextUrlField = document.querySelector('input[name="_next"]');
+        if (nextUrlField) {
+            nextUrlField.value = window.location.href;
+        }
+
+        const nameField = document.getElementById('chat-name');
+        const emailField = document.getElementById('chat-email');
+        const phoneField = document.getElementById('chat-phone');
+
+        let chatState = 'awaiting-name';
+        let userData = {};
+        let chatInitialized = false;
+
+        const questions = {
+            'awaiting-name': "Hi there! To get started, what's your full name?",
+            'awaiting-email': "Thanks, {name}! What's your email address?",
+            'awaiting-phone': "Got it. And what's your phone number?",
+            'awaiting-message': "Perfect! How can we help you today?",
+        };
+
+        const addMessage = (sender, message) => {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
+            msgDiv.innerHTML = `<div class="bubble">${message}</div><div class="timestamp">${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>`;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        };
+
+        const askQuestion = () => {
+            let question = questions[chatState];
+            if (question) {
+                if (userData.name) {
+                    question = question.replace('{name}', userData.name.split(' ')[0]);
+                }
+                setTimeout(() => addMessage('bot', question), 500);
+            }
+        };
+
+        const resetChat = () => {
+            chatBody.innerHTML = '';
+            chatState = 'awaiting-name';
+            userData = {};
+            chatInput.value = '';
+            chatInput.disabled = false;
+            sendBtn.disabled = false;
+            chatInput.placeholder = "Type your name...";
+            askQuestion();
+            chatInitialized = true;
+        };
+
+        chatFab.addEventListener('click', () => {
+            chatPopup.classList.toggle('active');
+            if (chatPopup.classList.contains('active') && !chatInitialized) {
+                resetChat();
+            }
+        });
+
+        closeChat.addEventListener('click', () => chatPopup.classList.remove('active'));
+
+        const handleUserInput = () => {
+            const message = chatInput.value.trim();
+            if (!message && chatState !== 'awaiting-message') return;
+
+            if (chatState !== 'awaiting-message') {
+                addMessage('user', message);
+            }
+            
+            chatInput.value = '';
+
+            switch (chatState) {
+                case 'awaiting-name':
+                    userData.name = message;
+                    nameField.value = message;
+                    chatState = 'awaiting-email';
+                    chatInput.placeholder = "Type your email...";
+                    break;
+                case 'awaiting-email':
+                    if (!/^\S+@\S+\.\S+$/.test(message)) {
+                        addMessage('bot', "That doesn't look like a valid email. Please try again.");
+                        return false;
+                    }
+                    userData.email = message;
+                    emailField.value = message;
+                    chatState = 'awaiting-phone';
+                    chatInput.placeholder = "Type your phone number...";
+                    break;
+                case 'awaiting-phone':
+                    userData.phone = message;
+                    phoneField.value = message;
+                    chatState = 'awaiting-message';
+                    chatInput.placeholder = "Type your message...";
+                    break;
+                case 'awaiting-message':
+                    // Just before submitting, show the final message
+                    addMessage('user', message);
+                    chatInput.disabled = true;
+                    sendBtn.disabled = true;
+                    setTimeout(() => {
+                        addMessage('bot', "Thank you! Sending your message...");
+                    }, 500);
+                    return true;
+            }
+            askQuestion();
+            return false;
+        };
+        
+        const submitForm = (e) => {
+            e.preventDefault();
+            const isReadyToSubmit = handleUserInput();
+            if (isReadyToSubmit) {
+                 setTimeout(() => chatForm.submit(), 1200);
+            }
+        };
+        
+        chatForm.addEventListener('submit', submitForm);
+    });
+</script>
+</html>
+
